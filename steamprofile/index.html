@@ -213,7 +213,7 @@
 				<div class="logo">
 					<span id="logo_holder">
 						<a href="http://store.steampowered.com/">
-							<img src="./Steam Community __ DC_files/globalheader_logo.png" width="176" height="44">
+							<img src="./images/globalheader_logo.png" width="176" height="44">
 						</a>
 					</span>
 					<!--[if lt IE 7]>
@@ -224,239 +224,256 @@
 					<![endif]-->
 				</div>
 
-			<div class="supernav_container">		
-				<a class="menuitem supernav" href="http://store.steampowered.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_store">
-					STORE	</a>
-				<div class="submenu_store" style="display: none;" data-submenuid="store">
-					<a class="submenuitem" href="http://store.steampowered.com/">Featured</a>
-					<a class="submenuitem" href="http://store.steampowered.com/explore/">Explore</a>
-					<a class="submenuitem" href="http://store.steampowered.com/curators/">Curators</a>
-					<a class="submenuitem" href="http://steamcommunity.com/my/wishlist/">Wishlist</a>
-					<a class="submenuitem" href="http://store.steampowered.com/news/">News</a>
-					<a class="submenuitem" href="http://store.steampowered.com/stats/">Stats</a>
-				</div>
+				<div class="supernav_container">		
+					<a class="menuitem supernav" href="http://store.steampowered.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_store">
+						STORE	</a>
+					<div class="submenu_store" style="display: none;" data-submenuid="store">
+						<a class="submenuitem" href="http://store.steampowered.com/">Featured</a>
+						<a class="submenuitem" href="http://store.steampowered.com/explore/">Explore</a>
+						<a class="submenuitem" href="http://store.steampowered.com/curators/">Curators</a>
+						<a class="submenuitem" href="http://steamcommunity.com/my/wishlist/">Wishlist</a>
+						<a class="submenuitem" href="http://store.steampowered.com/news/">News</a>
+						<a class="submenuitem" href="http://store.steampowered.com/stats/">Stats</a>
+					</div>
 
-				<a class="menuitem supernav" style="display: block" href="http://steamcommunity.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_community">
-					COMMUNITY
-				</a>
-				<div class="submenu_community" style="display: none;" data-submenuid="community">
-					<a class="submenuitem" href="http://steamcommunity.com/">Home</a>
-					<a class="submenuitem" href="http://steamcommunity.com/discussions/">Discussions</a>
-					<a class="submenuitem" href="http://steamcommunity.com/workshop/">Workshop</a>
-					<a class="submenuitem" href="http://steamcommunity.com/market/">Market</a>
-					<a class="submenuitem" href="http://steamcommunity.com/?subsection=broadcasts">Broadcasts</a>
-				</div>
+					<a class="menuitem supernav" style="display: block" href="http://steamcommunity.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_community">
+						COMMUNITY
+					</a>
+					<div class="submenu_community" style="display: none;" data-submenuid="community">
+						<a class="submenuitem" href="http://steamcommunity.com/">Home</a>
+						<a class="submenuitem" href="http://steamcommunity.com/discussions/">Discussions</a>
+						<a class="submenuitem" href="http://steamcommunity.com/workshop/">Workshop</a>
+						<a class="submenuitem" href="http://steamcommunity.com/market/">Market</a>
+						<a class="submenuitem" href="http://steamcommunity.com/?subsection=broadcasts">Broadcasts</a>
+					</div>
 
-				<a class="menuitem supernav username" href="http://steamcommunity.com/id/diegocard/home/" data-tooltip-type="selector" data-tooltip-content=".submenu_username">
-					DC
-				</a>
-				<div class="submenu_username" style="display: none;" data-submenuid="username">
-					<a class="submenuitem" href="http://steamcommunity.com/id/diegocard/home/">Activity</a>
-					<a class="submenuitem" href="http://steamcommunity.com/id/diegocard/">Profile</a>
-					<a class="submenuitem" href="http://steamcommunity.com/id/diegocard/friends/">Friends</a>
-					<a class="submenuitem" href="http://steamcommunity.com/id/diegocard/groups/">Groups</a>
-					<a class="submenuitem" href="http://steamcommunity.com/id/diegocard/screenshots/">Content</a>
-					<a class="submenuitem" href="http://steamcommunity.com/id/diegocard/badges/">Badges</a>
-					<a class="submenuitem" href="http://steamcommunity.com/id/diegocard/inventory/">Inventory</a>
-				</div>
-	
-				<a class="menuitem" href="http://store.steampowered.com/about/">
-					ABOUT
-				</a>
-	
-				<a class="menuitem" href="https://help.steampowered.com/en/">
-					SUPPORT
-				</a>
-			</div>
+					<a class="menuitem supernav username" href="http://steamcommunity.com/id/diegocard/home/" data-tooltip-type="selector" data-tooltip-content=".submenu_username">
+						DC
+					</a>
+					<div class="submenu_username" style="display: none;" data-submenuid="username">
+						<a class="submenuitem" href="http://steamcommunity.com/id/diegocard/home/">Activity</a>
+						<a class="submenuitem" href="http://steamcommunity.com/id/diegocard/">Profile</a>
+						<a class="submenuitem" href="http://steamcommunity.com/id/diegocard/friends/">Friends</a>
+						<a class="submenuitem" href="http://steamcommunity.com/id/diegocard/groups/">Groups</a>
+						<a class="submenuitem" href="http://steamcommunity.com/id/diegocard/screenshots/">Content</a>
+						<a class="submenuitem" href="http://steamcommunity.com/id/diegocard/badges/">Badges</a>
+						<a class="submenuitem" href="http://steamcommunity.com/id/diegocard/inventory/">Inventory</a>
+					</div>
 		
-			<script type="text/javascript">
-				jQuery(function($) {
-					$('.tooltip').v_tooltip();
-					$('#global_header .supernav').v_tooltip({'location':'bottom', 'destroyWhenDone': false, 'tooltipClass': 'supernav_content', 'offsetY':-4, 'offsetX': 1, 'horizontalSnap': 4, 'tooltipParent': '#global_header .supernav_container', 'correctForScreenSize': false});
-				});
-			</script>
+					<a class="menuitem" href="http://store.steampowered.com/about/">
+						ABOUT
+					</a>
+		
+					<a class="menuitem" href="https://help.steampowered.com/en/">
+						SUPPORT
+					</a>
+				</div>
+		
+				<script type="text/javascript">
+					jQuery(function($) {
+						$('.tooltip').v_tooltip();
+						$('#global_header .supernav').v_tooltip({'location':'bottom', 'destroyWhenDone': false, 'tooltipClass': 'supernav_content', 'offsetY':-4, 'offsetX': 1, 'horizontalSnap': 4, 'tooltipParent': '#global_header .supernav_container', 'correctForScreenSize': false});
+					});
+				</script>
 
-			<div id="global_actions">
-				<div id="global_action_menu">
-										<div class="header_installsteam_btn header_installsteam_btn_gray">
+				<!-- START global actions -->
+				<div id="global_actions">
+					<div id="global_action_menu">
+						<div class="header_installsteam_btn header_installsteam_btn_gray">
 							<div class="header_installsteam_btn_leftcap"></div>
 							<div class="header_installsteam_btn_rightcap"></div>
 
 							<a class="header_installsteam_btn_content" href="http://store.steampowered.com/about/">
-								Install Steam						</a>
+								Install Steam
+							</a>
 						</div>
-				
-				
-										<!-- notification inbox area -->
-																								<div id="header_notification_area">
-									<script type="text/javascript">$J(EnableNotificationCountPolling);</script>
-		<div id="header_notification_link" class="header_notification_btn global_header_toggle_button notification_count_total_ctn no_notifications" onclick="ShowMenu(this, 'header_notification_dropdown', 'right' );">
-			<span class="notification_count">0</span>
-			<span class="header_notification_envelope">
-				<img src="./Steam Community __ DC_files/header_menu_notifications.png" width="11" height="8">
-			</span>
-		</div>
-	
-			<div class="popup_block_new" id="header_notification_dropdown" style="display: none;">
-			<div class="popup_body popup_menu">
-							<a data-notification-type="4" class="popup_menu_item notification_ctn header_notification_comments" href="http://steamcommunity.com/id/diegocard/commentnotifications/">
-				<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 new comment</span><span class="notification_count_string plural"><span class="notification_count">0</span> new comments</span>			</a>
-			<div class="header_notification_dropdown_seperator"></div>
-						<a data-notification-type="5" class="popup_menu_item notification_ctn header_notification_items" href="http://steamcommunity.com/id/diegocard/inventory/">
-				<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 new item in your inventory</span><span class="notification_count_string plural"><span class="notification_count">0</span> new items in your inventory</span>			</a>
-			<div class="header_notification_dropdown_seperator"></div>
-						<a data-notification-type="6" class="popup_menu_item notification_ctn header_notification_invites" href="http://steamcommunity.com/id/diegocard/home/invites/">
-				<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 new invite</span><span class="notification_count_string plural"><span class="notification_count">0</span> new invites</span>			</a>
-			<div class="header_notification_dropdown_seperator"></div>
-						<a data-notification-type="8" class="popup_menu_item notification_ctn header_notification_gifts" href="http://steamcommunity.com/id/diegocard/inventory/#pending_gifts">
-				<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 new gift</span><span class="notification_count_string plural"><span class="notification_count">0</span> new gifts</span>			</a>
-			<div class="header_notification_dropdown_seperator"></div>
-						<a data-notification-type="9" class="popup_menu_item notification_ctn header_notification_offlinemessages" href="javascript:void(0)" onclick="LaunchWebChat(); HideMenu( 'header_notification_link', 'header_notification_dropdown' ); return false;">
-				<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 unread chat message</span><span class="notification_count_string plural"><span class="notification_count">0</span> unread chat messages</span>			</a>
-								<a data-notification-type="1" class="popup_menu_item notification_ctn hide_when_empty header_notification_tradeoffers" href="http://steamcommunity.com/id/diegocard/tradeoffers/">
-						<div class="header_notification_dropdown_seperator"></div>
-						<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 new trade notification</span><span class="notification_count_string plural"><span class="notification_count">0</span> new trade notifications</span>					</a>
-								<a data-notification-type="2" class="popup_menu_item notification_ctn hide_when_empty header_notification_asyncgame" href="http://steamcommunity.com/id/diegocard/gamenotifications">
-						<div class="header_notification_dropdown_seperator"></div>
-						<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 turn waiting</span><span class="notification_count_string plural"><span class="notification_count">0</span> new turns waiting</span>					</a>
-								<a data-notification-type="3" class="popup_menu_item notification_ctn hide_when_empty header_notification_moderatormessage" href="http://steamcommunity.com/id/diegocard/moderatormessages">
-						<div class="header_notification_dropdown_seperator"></div>
-						<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 community message</span><span class="notification_count_string plural"><span class="notification_count">0</span> community messages</span>					</a>
-								<a data-notification-type="10" class="popup_menu_item notification_ctn hide_when_empty header_notification_helprequestreply" href="https://help.steampowered.com/en/wizard/HelpRequests">
-						<div class="header_notification_dropdown_seperator"></div>
-						<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 reply from Steam Support</span><span class="notification_count_string plural"><span class="notification_count">0</span> replies from Steam Support</span>					</a>
+					
+						<!-- START notification inbox area -->
+						<div id="header_notification_area">
+							<script type="text/javascript">$J(EnableNotificationCountPolling);</script>
+
+							<div id="header_notification_link" class="header_notification_btn global_header_toggle_button notification_count_total_ctn no_notifications" onclick="ShowMenu(this, 'header_notification_dropdown', 'right' );">
+								<span class="notification_count">0</span>
+								<span class="header_notification_envelope">
+									<img src="./images/header_menu_notifications.png" width="11" height="8">
+								</span>
 							</div>
-		</div>
-							</div>
-					<span class="pulldown global_action_link" id="account_pulldown" onclick="ShowMenu( this, 'account_dropdown', 'right', 'bottom', true );">vengaran</span>
-					<div class="popup_block_new" id="account_dropdown" style="display: none;">
-						<div class="popup_body popup_menu">
-															<a class="popup_menu_item" href="javascript:Logout();">Logout</a>
-																						<a class="popup_menu_item" href="https://store.steampowered.com/account/">Account details</a>
-								<a class="popup_menu_item" href="https://store.steampowered.com/account/preferences/">Preferences</a>
-														<span class="popup_menu_item" id="account_language_pulldown">Change language</span>
-							<div class="popup_block_new" id="language_dropdown" style="display: none;">
+		
+							<div class="popup_block_new" id="header_notification_dropdown" style="display: none;">
 								<div class="popup_body popup_menu">
-																																									<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=bulgarian" onclick="ChangeLanguage( 'bulgarian' ); return false;">Български (Bulgarian)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=czech" onclick="ChangeLanguage( 'czech' ); return false;">čeština (Czech)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=danish" onclick="ChangeLanguage( 'danish' ); return false;">Dansk (Danish)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=dutch" onclick="ChangeLanguage( 'dutch' ); return false;">Nederlands (Dutch)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=english" onclick="ChangeLanguage( 'english' ); return false;">English</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=finnish" onclick="ChangeLanguage( 'finnish' ); return false;">Suomi (Finnish)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=french" onclick="ChangeLanguage( 'french' ); return false;">Français (French)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=german" onclick="ChangeLanguage( 'german' ); return false;">Deutsch (German)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=greek" onclick="ChangeLanguage( 'greek' ); return false;">Ελληνικά (Greek)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=hungarian" onclick="ChangeLanguage( 'hungarian' ); return false;">Magyar (Hungarian)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=italian" onclick="ChangeLanguage( 'italian' ); return false;">Italiano (Italian)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=japanese" onclick="ChangeLanguage( 'japanese' ); return false;">日本語 (Japanese)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=koreana" onclick="ChangeLanguage( 'koreana' ); return false;">한국어 (Korean)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=norwegian" onclick="ChangeLanguage( 'norwegian' ); return false;">Norsk (Norwegian)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=polish" onclick="ChangeLanguage( 'polish' ); return false;">Polski (Polish)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=portuguese" onclick="ChangeLanguage( 'portuguese' ); return false;">Português (Portuguese)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=brazilian" onclick="ChangeLanguage( 'brazilian' ); return false;">Português-Brasil (Portuguese-Brazil)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=romanian" onclick="ChangeLanguage( 'romanian' ); return false;">Română (Romanian)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=russian" onclick="ChangeLanguage( 'russian' ); return false;">Русский (Russian)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=schinese" onclick="ChangeLanguage( 'schinese' ); return false;">简体中文 (Simplified Chinese)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=spanish" onclick="ChangeLanguage( 'spanish' ); return false;">Español (Spanish)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=swedish" onclick="ChangeLanguage( 'swedish' ); return false;">Svenska (Swedish)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=tchinese" onclick="ChangeLanguage( 'tchinese' ); return false;">繁體中文 (Traditional Chinese)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=thai" onclick="ChangeLanguage( 'thai' ); return false;">ไทย (Thai)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=turkish" onclick="ChangeLanguage( 'turkish' ); return false;">Türkçe (Turkish)</a>
-																																<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=ukrainian" onclick="ChangeLanguage( 'ukrainian' ); return false;">Українська (Ukrainian)</a>
-																												<a class="popup_menu_item tight" href="http://translation.steampowered.com/" target="_blank">Help us translate Steam</a>
+									<a data-notification-type="4" class="popup_menu_item notification_ctn header_notification_comments" href="http://steamcommunity.com/id/diegocard/commentnotifications/">
+										<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 new comment</span><span class="notification_count_string plural"><span class="notification_count">0</span> new comments</span>
+									</a>
+
+									<div class="header_notification_dropdown_seperator"></div>
+									<a data-notification-type="5" class="popup_menu_item notification_ctn header_notification_items" href="http://steamcommunity.com/id/diegocard/inventory/">
+										<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 new item in your inventory</span><span class="notification_count_string plural"><span class="notification_count">0</span> new items in your inventory</span>
+									</a>
+									
+									<div class="header_notification_dropdown_seperator"></div>
+									<a data-notification-type="6" class="popup_menu_item notification_ctn header_notification_invites" href="http://steamcommunity.com/id/diegocard/home/invites/">
+										<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 new invite</span><span class="notification_count_string plural"><span class="notification_count">0</span> new invites</span>
+									</a>
+									
+									<div class="header_notification_dropdown_seperator"></div>
+									<a data-notification-type="8" class="popup_menu_item notification_ctn header_notification_gifts" href="http://steamcommunity.com/id/diegocard/inventory/#pending_gifts">
+										<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 new gift</span><span class="notification_count_string plural"><span class="notification_count">0</span> new gifts</span>
+									</a>
+									
+									<div class="header_notification_dropdown_seperator"></div>
+									<a data-notification-type="9" class="popup_menu_item notification_ctn header_notification_offlinemessages" href="javascript:void(0)" onclick="LaunchWebChat(); HideMenu( 'header_notification_link', 'header_notification_dropdown' ); return false;">
+										<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 unread chat message</span><span class="notification_count_string plural"><span class="notification_count">0</span> unread chat messages</span>
+									</a>
+									<a data-notification-type="1" class="popup_menu_item notification_ctn hide_when_empty header_notification_tradeoffers" href="http://steamcommunity.com/id/diegocard/tradeoffers/">
+										<div class="header_notification_dropdown_seperator"></div>
+										<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 new trade notification</span><span class="notification_count_string plural"><span class="notification_count">0</span> new trade notifications</span>
+									</a>
+									<a data-notification-type="2" class="popup_menu_item notification_ctn hide_when_empty header_notification_asyncgame" href="http://steamcommunity.com/id/diegocard/gamenotifications">
+										<div class="header_notification_dropdown_seperator"></div>
+										<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 turn waiting</span><span class="notification_count_string plural"><span class="notification_count">0</span> new turns waiting</span>
+									</a>
+									<a data-notification-type="3" class="popup_menu_item notification_ctn hide_when_empty header_notification_moderatormessage" href="http://steamcommunity.com/id/diegocard/moderatormessages">
+										<div class="header_notification_dropdown_seperator"></div>
+										<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 community message</span><span class="notification_count_string plural"><span class="notification_count">0</span> community messages</span>
+									</a>
+									<a data-notification-type="10" class="popup_menu_item notification_ctn hide_when_empty header_notification_helprequestreply" href="https://help.steampowered.com/en/wizard/HelpRequests">
+										<div class="header_notification_dropdown_seperator"></div>
+										<span class="notification_icon"></span><span class="notification_count_string singular" style="display: none;">1 reply from Steam Support</span><span class="notification_count_string plural"><span class="notification_count">0</span> replies from Steam Support</span>
+									</a>
 								</div>
 							</div>
-															<a class="popup_menu_item" href="http://steamcommunity.com/id/diegocard/">View profile</a>
-													</div>
-					</div>
-					<script type="text/javascript">
-						RegisterFlyout( 'account_language_pulldown', 'language_dropdown', 'leftsubmenu', 'bottomsubmenu', true );
-					</script>
-											<div id="header_wallet_ctn">
+						</div>
+						<!-- END notification inbox area -->
+
+						<!-- START account dropdown -->
+						<span class="pulldown global_action_link" id="account_pulldown" onclick="ShowMenu( this, 'account_dropdown', 'right', 'bottom', true );">vengaran</span>
+						<div class="popup_block_new" id="account_dropdown" style="display: none;">
+							<div class="popup_body popup_menu">
+								<a class="popup_menu_item" href="javascript:Logout();">Logout</a>
+								<a class="popup_menu_item" href="https://store.steampowered.com/account/">Account details</a>
+								<a class="popup_menu_item" href="https://store.steampowered.com/account/preferences/">Preferences</a>
+								<span class="popup_menu_item" id="account_language_pulldown">Change language</span>
+								<div class="popup_block_new" id="language_dropdown" style="display: none;">
+									<div class="popup_body popup_menu">
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=bulgarian" onclick="ChangeLanguage( 'bulgarian' ); return false;">Български (Bulgarian)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=czech" onclick="ChangeLanguage( 'czech' ); return false;">čeština (Czech)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=danish" onclick="ChangeLanguage( 'danish' ); return false;">Dansk (Danish)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=dutch" onclick="ChangeLanguage( 'dutch' ); return false;">Nederlands (Dutch)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=english" onclick="ChangeLanguage( 'english' ); return false;">English</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=finnish" onclick="ChangeLanguage( 'finnish' ); return false;">Suomi (Finnish)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=french" onclick="ChangeLanguage( 'french' ); return false;">Français (French)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=german" onclick="ChangeLanguage( 'german' ); return false;">Deutsch (German)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=greek" onclick="ChangeLanguage( 'greek' ); return false;">Ελληνικά (Greek)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=hungarian" onclick="ChangeLanguage( 'hungarian' ); return false;">Magyar (Hungarian)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=italian" onclick="ChangeLanguage( 'italian' ); return false;">Italiano (Italian)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=japanese" onclick="ChangeLanguage( 'japanese' ); return false;">日本語 (Japanese)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=koreana" onclick="ChangeLanguage( 'koreana' ); return false;">한국어 (Korean)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=norwegian" onclick="ChangeLanguage( 'norwegian' ); return false;">Norsk (Norwegian)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=polish" onclick="ChangeLanguage( 'polish' ); return false;">Polski (Polish)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=portuguese" onclick="ChangeLanguage( 'portuguese' ); return false;">Português (Portuguese)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=brazilian" onclick="ChangeLanguage( 'brazilian' ); return false;">Português-Brasil (Portuguese-Brazil)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=romanian" onclick="ChangeLanguage( 'romanian' ); return false;">Română (Romanian)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=russian" onclick="ChangeLanguage( 'russian' ); return false;">Русский (Russian)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=schinese" onclick="ChangeLanguage( 'schinese' ); return false;">简体中文 (Simplified Chinese)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=spanish" onclick="ChangeLanguage( 'spanish' ); return false;">Español (Spanish)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=swedish" onclick="ChangeLanguage( 'swedish' ); return false;">Svenska (Swedish)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=tchinese" onclick="ChangeLanguage( 'tchinese' ); return false;">繁體中文 (Traditional Chinese)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=thai" onclick="ChangeLanguage( 'thai' ); return false;">ไทย (Thai)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=turkish" onclick="ChangeLanguage( 'turkish' ); return false;">Türkçe (Turkish)</a>
+										<a class="popup_menu_item tight" href="http://steamcommunity.com/id/diegocard?l=ukrainian" onclick="ChangeLanguage( 'ukrainian' ); return false;">Українська (Ukrainian)</a>
+										<a class="popup_menu_item tight" href="http://translation.steampowered.com/" target="_blank">Help us translate Steam</a>
+									</div>
+								</div>
+								<a class="popup_menu_item" href="http://steamcommunity.com/id/diegocard/">View profile</a>
+							</div>
+						</div>
+						<script type="text/javascript">
+							RegisterFlyout( 'account_language_pulldown', 'language_dropdown', 'leftsubmenu', 'bottomsubmenu', true );
+						</script>
+						<!-- END account dropdown -->
+
+						<div id="header_wallet_ctn">
 							<a class="global_action_link" id="header_wallet_balance" href="https://store.steampowered.com/account/store_transactions/">$U23,85</a>
 						</div>
-												</div>
-							<a href="http://steamcommunity.com/id/diegocard/" class="user_avatar playerAvatar online">
-					<img src="./images/f65972a198c6d809f60e65a2cbfce2781d620dc6.jpg">
-				</a>
 					</div>
+
+					<a href="http://steamcommunity.com/id/diegocard/" class="user_avatar playerAvatar online">
+						<img src="./images/f65972a198c6d809f60e65a2cbfce2781d620dc6.jpg">
+					</a>
+				</div>
+				<!-- END global actions -->
+
 			</div>
-</div>
-<script type="text/javascript">
-	g_sessionID = "b87c7f9a58a5bd344df8447f";
-	g_steamID = "76561198008822803";
+		</div>
+	<script type="text/javascript">
+		g_sessionID = "b87c7f9a58a5bd344df8447f";
+		g_steamID = "76561198008822803";
 
-	// We always want to have the timezone cookie set for PHP to use
-	setTimezoneCookies();
+		// We always want to have the timezone cookie set for PHP to use
+		setTimezoneCookies();
 
-	$J( function() {
-
-		InitMiniprofileHovers();
-		InitEmoticonHovers();
-		window.BindCommunityTooltip = function( $Selector ) { $Selector.v_tooltip( {'tooltipClass': 'community_tooltip', 'dataName': 'communityTooltip' } ); };
-		BindCommunityTooltip( $J('[data-community-tooltip]') );
-	});
-
-	$J( function() { InitEconomyHovers( "http:\/\/community.edgecast.steamstatic.com\/public\/css\/skin_1\/economy.css?v=q6EkkWwqjgQx", "http:\/\/community.edgecast.steamstatic.com\/public\/javascript\/economy_common.js?v=tsXdRVB0yEaR&l=english", "http:\/\/community.edgecast.steamstatic.com\/public\/javascript\/economy.js?v=DNiCDdc9ihXn&l=english" );});</script>
-		<div class="responsive_page_template_content">
-
-				<script type="text/javascript">
-		g_rgProfileData = {"url":"http:\/\/steamcommunity.com\/id\/diegocard\/","steamid":"76561198008822803","personaname":"DC","summary":" <b>Contact<\/b> <br>• Mail: <a href=\"mailto:diegocard@gmail.com\">diegocard@gmail.com<\/a><br>• Phone: (+598) 99687570<br><br>"};
 		$J( function() {
-			window.Responsive_ReparentItemsInResponsiveMode && Responsive_ReparentItemsInResponsiveMode( '.responsive_groupfriends_element', $J('#responsive_groupfriends_element_ctn') );
-					});
+
+			InitMiniprofileHovers();
+			InitEmoticonHovers();
+			window.BindCommunityTooltip = function( $Selector ) { $Selector.v_tooltip( {'tooltipClass': 'community_tooltip', 'dataName': 'communityTooltip' } ); };
+			BindCommunityTooltip( $J('[data-community-tooltip]') );
+		});
+
+		$J( function() { InitEconomyHovers( "http:\/\/community.edgecast.steamstatic.com\/public\/css\/skin_1\/economy.css?v=q6EkkWwqjgQx", "http:\/\/community.edgecast.steamstatic.com\/public\/javascript\/economy_common.js?v=tsXdRVB0yEaR&l=english", "http:\/\/community.edgecast.steamstatic.com\/public\/javascript\/economy.js?v=DNiCDdc9ihXn&l=english" );});
 	</script>
+	
+	<div class="responsive_page_template_content">
 
+		<script type="text/javascript">
+			g_rgProfileData = {"url":"http:\/\/steamcommunity.com\/id\/diegocard\/","steamid":"76561198008822803","personaname":"DC","summary":" <b>Contact<\/b> <br>• Mail: <a href=\"mailto:diegocard@gmail.com\">diegocard@gmail.com<\/a><br>• Phone: (+598) 99687570<br><br>"};
+			$J( function() {
+				window.Responsive_ReparentItemsInResponsiveMode && Responsive_ReparentItemsInResponsiveMode( '.responsive_groupfriends_element', $J('#responsive_groupfriends_element_ctn') );
+			});
+		</script>
 
+		<div class="no_header profile_page  ">
 
-<div class="no_header profile_page  ">
+			<!-- START profile main -->
+			<div class="profile_header_bg">
+				<div class="profile_header_bg_texture">
+					<div class="profile_header">
+						<div class="profile_header_content">
 
-	<div class="profile_header_bg">
+							<div class="profile_header_centered_persona">
+								<div class="persona_name" style="font-size: 24px;">
+									<span class="actual_persona_name">Diego Cardozo</span>
 
+									<div id="NamePopup" class="popup_block_new" style="display: none;">
+										<div class="popup_body popup_menu">
+											<div>This user has also played as:</div>
+											<div id="NamePopupAliases">
 
-	<div class="profile_header_bg_texture">
-		
-		<div class="profile_header">
-
-			<div class="profile_header_content">
-
-								<div class="profile_header_centered_persona">
-					<div class="persona_name" style="font-size: 24px;">
-						<span class="actual_persona_name">DC</span>
-												<span class="namehistory_link" onclick="ShowAliasPopup( this );">
-								<img id="getnamehistory_arrow" src="./Steam Community __ DC_files/arrowDn9x5.gif" width="9" height="5" border="0">
-							</span>
-						<div id="NamePopup" class="popup_block_new" style="display: none;">
-							<div class="popup_body popup_menu">
-								<div>This user has also played as:</div>
-								<div id="NamePopupAliases">
-
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="header_real_name ellipsis">
+									<bdi>Diego</bdi>&nbsp;
+									<img class="profile_flag" src="./images/uy.gif">
+									Montevideo, Uruguay
 								</div>
 							</div>
-						</div>
-					</div>
 
-										<div class="header_real_name ellipsis">
-						<bdi>Diego</bdi>
-													&nbsp;
-																			<img class="profile_flag" src="./Steam Community __ DC_files/uy.gif">
-												Montevideo, Uruguay					</div>
-									</div>
+							<div class="playerAvatar profile_header_size online">
+								<div class="playerAvatarAutoSizeInner"><img src="./images/f65972a198c6d809f60e65a2cbfce2781d620dc6_full.jpg"></div>
+							</div>
 
-				<div class="playerAvatar profile_header_size online">
-					<div class="playerAvatarAutoSizeInner"><img src="./images/f65972a198c6d809f60e65a2cbfce2781d620dc6_full.jpg"></div>
-				</div>
-				<div class="profile_header_badgeinfo">
-					<div class="profile_header_badgeinfo_badge_area">
-													<a href="http://steamcommunity.com/id/diegocard/badges">
-								<div class="persona_name persona_level">Level <div class="friendPlayerLevel lvl_20"><span class="friendPlayerLevelNum">20</span></div></div>
-							</a>
-															<div class="profile_header_badge">
-																			<div class="favorite_badge">
-											<div class="favorite_badge_icon" data-community-tooltip="Years of Service&lt;br&gt;
-Member since 10 April, 2009.">
+							<div class="profile_header_badgeinfo">
+								<div class="profile_header_badgeinfo_badge_area">
+									<a href="http://steamcommunity.com/id/diegocard/badges">
+										<div class="persona_name persona_level">Level <div class="friendPlayerLevel lvl_20"><span class="friendPlayerLevelNum">20</span></div></div>
+									</a>
+									<div class="profile_header_badge">
+										<div class="favorite_badge">
+											<div class="favorite_badge_icon" data-community-tooltip="Years of Service&lt;br&gt;Member since 10 April, 2009.">
 												<a class="whiteLink" href="http://steamcommunity.com/id/diegocard/badges/1">
-													<img src="./Steam Community __ DC_files/steamyears802_54.png" class="badge_icon small">
+													<img src="./images/steamyears802_54.png" class="badge_icon small">
 												</a>
 											</div>
 											<div class="favorite_badge_description">
@@ -464,189 +481,185 @@ Member since 10 April, 2009.">
 												<div class="xp">400 XP</div>
 											</div>
 										</div>
-																	</div>
-																		</div>
-					<div class="profile_header_actions">
-													<a class="btn_profile_action btn_medium" href="http://steamcommunity.com/id/diegocard/edit">
-								<span>Edit Profile</span>
-							</a>
-											</div>
-				</div>
+									</div>
+								</div>
+								<div class="profile_header_actions">
+									<a class="btn_profile_action btn_medium" href="http://steamcommunity.com/id/diegocard/edit">
+										<span>Edit Profile</span>
+									</a>
+								</div>
+							</div>
 
-				<div class="profile_header_summary">
-					<div class="persona_name persona_name_spacer" style="font-size: 24px;">
-						<span class="actual_persona_name">&nbsp;</span>
-					</div>
-											<div class="header_real_name_spacer">&nbsp;</div>
-						<div class="profile_summary noexpand">
-							 <b>Contact</b> <br>• Mail: <a href="mailto:diegocard@gmail.com">diegocard@gmail.com</a><br>• Phone: (+598) 99687570<br><br>						</div>
-						<div class="profile_summary_footer" style="display: none;">
-							<span class="whiteLink">View more info</span>
-						</div>
-						<script type="text/javascript"> $J( function() { InitProfileSummary( g_rgProfileData['summary'] ); } ); </script>
-									</div>
-
-			</div>
-		</div>
-	</div>
-</div>
-	<div class="profile_content ">
-				<div class="profile_content_inner">
-			
-			
-			
-
-			
-			<div class="profile_rightcol">
-				<div class="responsive_status_info">
-						<div class="profile_in_game persona online">
-					<div class="profile_in_game_header">Currently Online</div>
-					</div>
-									</div>
-
-				<div class="responsive_count_link_area">
-					<div class="profile_badges">
-						<div class="profile_count_link_preview_ctn">
-																<div class="profile_count_link ellipsis">
-						<a href="http://steamcommunity.com/id/diegocard/badges/">
-							<span class="count_link_label">Badges</span>&nbsp;
-							<span class="profile_count_link_total">
-																	20															</span>
-						</a>
-					</div>
-														<div class="profile_count_link_preview">
-																									<div class="profile_badges_badge " data-community-tooltip="Community Ambassador&lt;br&gt;
-0 of 0 tasks completed. Complete 27 more Steam Community tasks to earn the Level 3 badge.">
-										<a href="http://steamcommunity.com/id/diegocard/badges/2">
-											<img src="./Steam Community __ DC_files/community03_54.png" class="badge_icon small">
-										</a>
-									</div>
-																										<div class="profile_badges_badge " data-community-tooltip="Corrupt&lt;br&gt;
-Level 1 Sniper Elite: Nazi Zombie Army Badge">
-										<a href="http://steamcommunity.com/id/diegocard/gamecards/227100">
-											<img src="./Steam Community __ DC_files/6ee99463142bb318a545b1e4a8c9920625a14e4f.png" class="badge_icon small">
-										</a>
-									</div>
-																										<div class="profile_badges_badge " data-community-tooltip="Chicken Chaser&lt;br&gt;
-Level 1 Counter-Strike: Global Offensive Badge">
-										<a href="http://steamcommunity.com/id/diegocard/gamecards/730">
-											<img src="./Steam Community __ DC_files/54e40b9e2288fbab8bd4c6537b0325d405c7e1b0.png" class="badge_icon small">
-										</a>
-									</div>
-																										<div class="profile_badges_badge last" data-community-tooltip="Patient Zero&lt;br&gt;
-Level 1 Left 4 Dead 2 Badge">
-										<a href="http://steamcommunity.com/id/diegocard/gamecards/550">
-											<img src="./Steam Community __ DC_files/052a70009a898614b2e40d0a4ecd7e18d085a7c0.png" class="badge_icon small">
-										</a>
-									</div>
-																	<div style="clear: left;"></div>
+							<div class="profile_header_summary">
+								<div class="persona_name persona_name_spacer" style="font-size: 24px;">
+									<span class="actual_persona_name">&nbsp;</span>
+								</div>
+								<div class="header_real_name_spacer">&nbsp;</div>
+								<div class="profile_summary noexpand">
+										<b>Contact</b> <br>• Mail: <a href="mailto:diegocard@gmail.com">diegocard@gmail.com</a><br>• Phone: (+598) 99687570<br><br>
+								</div>
+								<div class="profile_summary_footer" style="display: none;">
+									<span class="whiteLink">View more info</span>
+								</div>
+								<script type="text/javascript"> $J( function() { InitProfileSummary( g_rgProfileData['summary'] ); } ); </script>
 							</div>
 						</div>
 					</div>
-
-					<div id="responsive_groupfriends_element_ctn">
-					</div>
-
-					<div class="profile_item_links">
-															<div class="profile_count_link ellipsis">
-						<a href="http://steamcommunity.com/id/diegocard/games/?tab=all">
-							<span class="count_link_label">Games</span>&nbsp;
-							<span class="profile_count_link_total">
-																	139															</span>
-						</a>
-					</div>
-																						<div class="profile_count_link ellipsis">
-						<a href="http://steamcommunity.com/id/diegocard/inventory/">
-							<span class="count_link_label">Inventory</span>&nbsp;
-							<span class="profile_count_link_total">
-																	&nbsp; <!-- so the line spaces like the rest -->
-															</span>
-						</a>
-					</div>
-																						<div class="profile_count_link ellipsis">
-						<a href="http://steamcommunity.com/id/diegocard/screenshots/">
-							<span class="count_link_label">Screenshots</span>&nbsp;
-							<span class="profile_count_link_total">
-																	44															</span>
-						</a>
-					</div>
-																						<div class="profile_count_link ellipsis">
-						<a href="http://steamcommunity.com/id/diegocard/videos/">
-							<span class="count_link_label">Videos</span>&nbsp;
-							<span class="profile_count_link_total">
-																	&nbsp; <!-- so the line spaces like the rest -->
-															</span>
-						</a>
-					</div>
-																						<div class="profile_count_link ellipsis">
-						<a href="http://steamcommunity.com/id/diegocard/myworkshopfiles/">
-							<span class="count_link_label">Workshop Items</span>&nbsp;
-							<span class="profile_count_link_total">
-																	&nbsp; <!-- so the line spaces like the rest -->
-															</span>
-						</a>
-					</div>
-																						<div class="profile_count_link ellipsis">
-						<a href="http://steamcommunity.com/id/diegocard/recommended/">
-							<span class="count_link_label">Reviews</span>&nbsp;
-							<span class="profile_count_link_total">
-																	&nbsp; <!-- so the line spaces like the rest -->
-															</span>
-						</a>
-					</div>
-																						<div class="profile_count_link ellipsis">
-						<a href="http://steamcommunity.com/id/diegocard/myworkshopfiles/?section=guides">
-							<span class="count_link_label">Guides</span>&nbsp;
-							<span class="profile_count_link_total">
-																	&nbsp; <!-- so the line spaces like the rest -->
-															</span>
-						</a>
-					</div>
-																						<div class="profile_count_link ellipsis">
-						<a href="http://steamcommunity.com/id/diegocard/images/">
-							<span class="count_link_label">Artwork</span>&nbsp;
-							<span class="profile_count_link_total">
-																	&nbsp; <!-- so the line spaces like the rest -->
-															</span>
-						</a>
-					</div>
-																									<div style="clear: left;"></div>
-					</div>
 				</div>
+			</div>
+			<!-- END profile main -->
 
-									<div><div class="profile_group_links profile_count_link_preview_ctn responsive_groupfriends_element">
-															<div class="profile_count_link ellipsis">
-						<a href="http://steamcommunity.com/id/diegocard/groups/">
-							<span class="count_link_label">Groups</span>&nbsp;
-							<span class="profile_count_link_total">
-																	2															</span>
-						</a>
-					</div>
-																			<div class="profile_count_link_preview">
-															<div class="profile_group profile_primary_group">
-									<div class="profile_group_avatar">
-										<a href="http://steamcommunity.com/groups/deafuruguay">
-											<img src="./Steam Community __ DC_files/2e67f39efc980575a38df30194890c7dd4e49a5d_medium.jpg">
+			<!-- START profile body -->
+			<div class="profile_content ">
+				<div class="profile_content_inner">
+					<div class="profile_rightcol">
+						<div class="responsive_status_info">
+							<div class="profile_in_game persona online">
+								<div class="profile_in_game_header">Currently Online</div>
+							</div>
+						</div>
+
+						<div class="responsive_count_link_area">
+							<!-- START badges -->
+							<div class="profile_badges">
+								<div class="profile_count_link_preview_ctn">
+									<div class="profile_count_link ellipsis">
+										<a href="http://steamcommunity.com/id/diegocard/badges/">
+											<span class="count_link_label">Badges</span>&nbsp;
+											<span class="profile_count_link_total">20															</span>
 										</a>
 									</div>
-									<a class="whiteLink" href="http://steamcommunity.com/groups/deafuruguay">
-										Deaf Uruguay									</a>
-									<div class="profile_group_membercount">14 Members</div>
-									<div style="clear: left;"></div>
-								</div>
-																															<div class="profile_group">
-										<div class="profile_group_avatar">
-											<a href="http://steamcommunity.com/groups/HoxHud">
-												<img src="./Steam Community __ DC_files/f48de34c76fbb5a020dd8859d957581e4dd37240.jpg">
+									<div class="profile_count_link_preview">
+										<div class="profile_badges_badge " data-community-tooltip="Community Ambassador&lt;br&gt;0 of 0 tasks completed. Complete 27 more Steam Community tasks to earn the Level 3 badge.">
+											<a href="http://steamcommunity.com/id/diegocard/badges/2">
+												<img src="./images/community03_54.png" class="badge_icon small">
 											</a>
 										</div>
-										<a class="whiteLink" href="http://steamcommunity.com/groups/HoxHud">
-											HoxHud										</a>
-										<div class="profile_group_membercount">567,789 Members</div>
+
+										<div class="profile_badges_badge " data-community-tooltip="Corrupt&lt;br&gt;Level 1 Sniper Elite: Nazi Zombie Army Badge">
+											<a href="http://steamcommunity.com/id/diegocard/gamecards/227100">
+												<img src="./images/6ee99463142bb318a545b1e4a8c9920625a14e4f.png" class="badge_icon small">
+											</a>
+										</div>
+
+										<div class="profile_badges_badge " data-community-tooltip="Chicken Chaser&lt;br&gt;Level 1 Counter-Strike: Global Offensive Badge">
+											<a href="http://steamcommunity.com/id/diegocard/gamecards/730">
+												<img src="./images/54e40b9e2288fbab8bd4c6537b0325d405c7e1b0.png" class="badge_icon small">
+											</a>
+										</div>
+
+										<div class="profile_badges_badge last" data-community-tooltip="Patient Zero&lt;br&gt;Level 1 Left 4 Dead 2 Badge">
+											<a href="http://steamcommunity.com/id/diegocard/gamecards/550">
+												<img src="./images/052a70009a898614b2e40d0a4ecd7e18d085a7c0.png" class="badge_icon small">
+											</a>
+										</div>
 										<div style="clear: left;"></div>
 									</div>
-																					</div>
-					</div></div>
+								</div>
+							</div>
+							<!-- END badges -->
+
+							<div id="responsive_groupfriends_element_ctn">
+							</div>
+
+							<!-- START profile item links -->
+							<div class="profile_item_links">
+								<div class="profile_count_link ellipsis">
+									<a href="http://steamcommunity.com/id/diegocard/games/?tab=all">
+										<span class="count_link_label">Games</span>&nbsp;
+										<span class="profile_count_link_total">139</span>
+									</a>
+								</div>
+
+								<div class="profile_count_link ellipsis">
+									<a href="http://steamcommunity.com/id/diegocard/inventory/">
+										<span class="count_link_label">Inventory</span>&nbsp;
+										<span class="profile_count_link_total">&nbsp; <!-- so the line spaces like the rest --></span>
+									</a>
+								</div>
+
+								<div class="profile_count_link ellipsis">
+									<a href="http://steamcommunity.com/id/diegocard/screenshots/">
+										<span class="count_link_label">Screenshots</span>&nbsp;
+										<span class="profile_count_link_total">44</span>
+									</a>
+								</div>
+
+								<div class="profile_count_link ellipsis">
+									<a href="http://steamcommunity.com/id/diegocard/videos/">
+										<span class="count_link_label">Videos</span>&nbsp;
+										<span class="profile_count_link_total">&nbsp; <!-- so the line spaces like the rest --></span>
+									</a>
+								</div>
+
+								<div class="profile_count_link ellipsis">
+									<a href="http://steamcommunity.com/id/diegocard/myworkshopfiles/">
+										<span class="count_link_label">Workshop Items</span>&nbsp;
+										<span class="profile_count_link_total">&nbsp; <!-- so the line spaces like the rest --></span>
+									</a>
+								</div>
+
+								<div class="profile_count_link ellipsis">
+									<a href="http://steamcommunity.com/id/diegocard/recommended/">
+										<span class="count_link_label">Reviews</span>&nbsp;
+										<span class="profile_count_link_total">&nbsp; <!-- so the line spaces like the rest --></span>
+									</a>
+								</div>
+
+								<div class="profile_count_link ellipsis">
+									<a href="http://steamcommunity.com/id/diegocard/myworkshopfiles/?section=guides">
+										<span class="count_link_label">Guides</span>&nbsp;
+										<span class="profile_count_link_total">&nbsp; <!-- so the line spaces like the rest --></span>
+									</a>
+								</div>
+
+								<div class="profile_count_link ellipsis">
+									<a href="http://steamcommunity.com/id/diegocard/images/">
+										<span class="count_link_label">Artwork</span>&nbsp;
+										<span class="profile_count_link_total">&nbsp; <!-- so the line spaces like the rest --></span>
+									</a>
+								</div>
+
+								<div style="clear: left;"></div>
+							</div>
+							<!-- END profile item links -->
+						</div>
+
+						<!-- START groups -->
+						<div>
+							<div class="profile_group_links profile_count_link_preview_ctn responsive_groupfriends_element">
+								<div class="profile_count_link ellipsis">
+									<a href="http://steamcommunity.com/id/diegocard/groups/">
+										<span class="count_link_label">Groups</span>&nbsp;
+										<span class="profile_count_link_total">2</span>
+									</a>
+								</div>
+
+								<div class="profile_count_link_preview">
+									<div class="profile_group profile_primary_group">
+										<div class="profile_group_avatar">
+											<a href="http://steamcommunity.com/groups/deafuruguay">
+												<img src="./images/2e67f39efc980575a38df30194890c7dd4e49a5d_medium.jpg">
+											</a>
+										</div>
+										<a class="whiteLink" href="http://steamcommunity.com/groups/deafuruguay">Deaf Uruguay</a>
+										<div class="profile_group_membercount">14 Members</div>
+										<div style="clear: left;"></div>
+									</div>
+									<div class="profile_group">
+										<div class="profile_group_avatar">
+											<a href="http://steamcommunity.com/groups/HoxHud">
+												<img src="./images/f48de34c76fbb5a020dd8859d957581e4dd37240.jpg">
+											</a>
+										</div>
+										<a class="whiteLink" href="http://steamcommunity.com/groups/HoxHud">HoxHud</a>
+											<div class="profile_group_membercount">567,789 Members</div>
+											<div style="clear: left;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- END groups -->
 				
 									<div><div class="profile_friend_links profile_count_link_preview_ctn responsive_groupfriends_element">
 															<div class="profile_count_link ellipsis">
@@ -665,7 +678,7 @@ Level 1 Left 4 Dead 2 Badge">
 					<span class="friendPlayerLevelNum">103</span>
 				</div>
 												<div class="playerAvatar online">
-				<img src="./Steam Community __ DC_files/1995deba7f613f0d7c6249d7b2a59dd8747e44e6_medium.jpg">
+				<img src="./images/1995deba7f613f0d7c6249d7b2a59dd8747e44e6_medium.jpg">
 			</div>
 			<div class="friendBlockContent">
 				.:VRAVEN:.[LOL Stream Twitch]<br>
@@ -680,7 +693,7 @@ Level 1 Left 4 Dead 2 Badge">
 					<span class="friendPlayerLevelNum">36</span>
 				</div>
 												<div class="playerAvatar online">
-				<img src="./Steam Community __ DC_files/0b592bfa6b09769587a012f3573322e92e1eec80_medium.jpg">
+				<img src="./images/0b592bfa6b09769587a012f3573322e92e1eec80_medium.jpg">
 			</div>
 			<div class="friendBlockContent">
 				Elratauru<br>
@@ -695,7 +708,7 @@ Level 1 Left 4 Dead 2 Badge">
 					<span class="friendPlayerLevelNum">26</span>
 				</div>
 												<div class="playerAvatar online">
-				<img src="./Steam Community __ DC_files/28ecfeea01d5bd16b2861dbaa93459ab0291e26e_medium.jpg">
+				<img src="./images/28ecfeea01d5bd16b2861dbaa93459ab0291e26e_medium.jpg">
 			</div>
 			<div class="friendBlockContent">
 				Rayser Exseya<br>
@@ -710,7 +723,7 @@ Level 1 Left 4 Dead 2 Badge">
 					<span class="friendPlayerLevelNum">23</span>
 				</div>
 												<div class="playerAvatar offline">
-				<img src="./Steam Community __ DC_files/ad7bad61b2e280b0005711b44a3f09f2dd094369_medium.jpg">
+				<img src="./images/ad7bad61b2e280b0005711b44a3f09f2dd094369_medium.jpg">
 			</div>
 			<div class="friendBlockContent">
 				Booty Bandit<br>
@@ -725,7 +738,7 @@ Level 1 Left 4 Dead 2 Badge">
 					<span class="friendPlayerLevelNum">14</span>
 				</div>
 												<div class="playerAvatar in-game">
-				<img src="./Steam Community __ DC_files/373751735ea942a3e55fffbbcfb5e9dfe9cde5f3_medium.jpg">
+				<img src="./images/373751735ea942a3e55fffbbcfb5e9dfe9cde5f3_medium.jpg">
 			</div>
 			<div class="friendBlockContent">
 				Archimedes_15<br>
@@ -740,7 +753,7 @@ Level 1 Left 4 Dead 2 Badge">
 					<span class="friendPlayerLevelNum">14</span>
 				</div>
 												<div class="playerAvatar in-game">
-				<img src="./Steam Community __ DC_files/9f3f7abbe7b803d800c2f8b8aca7131ad2655ae3_medium.jpg">
+				<img src="./images/9f3f7abbe7b803d800c2f8b8aca7131ad2655ae3_medium.jpg">
 			</div>
 			<div class="friendBlockContent">
 				Juanete<br>
@@ -785,32 +798,32 @@ Level 1 Left 4 Dead 2 Badge">
 						<div class="showcase_content_bg">
 																				<div class="showcase_achievement first" data-community-tooltip="Magicka&lt;br&gt;Is that the wurst you can do?&lt;br&gt;1% of players have this">
 							<a href="http://steamcommunity.com/id/diegocard/stats/42910/achievements/">
-								<img src="./Steam Community __ DC_files/68570cb4e8a944b136654a3267f9bfd56f6daed8.jpg">
+								<img src="./images/68570cb4e8a944b136654a3267f9bfd56f6daed8.jpg">
 							</a>
 						</div>
 											<div class="showcase_achievement " data-community-tooltip="Magicka&lt;br&gt;Mission improbable &lt;br&gt;2% of players have this">
 							<a href="http://steamcommunity.com/id/diegocard/stats/42910/achievements/">
-								<img src="./Steam Community __ DC_files/e1c59fa3df694fbcf8d9f1ed6cba3bf44192d5c8.jpg">
+								<img src="./images/e1c59fa3df694fbcf8d9f1ed6cba3bf44192d5c8.jpg">
 							</a>
 						</div>
 											<div class="showcase_achievement " data-community-tooltip="Magicka&lt;br&gt;Fhtagn once more!&lt;br&gt;2% of players have this">
 							<a href="http://steamcommunity.com/id/diegocard/stats/42910/achievements/">
-								<img src="./Steam Community __ DC_files/13926ca9e4b01441f08f9a4a72e0aa7f12665360.jpg">
+								<img src="./images/13926ca9e4b01441f08f9a4a72e0aa7f12665360.jpg">
 							</a>
 						</div>
 											<div class="showcase_achievement " data-community-tooltip="Trine 2&lt;br&gt;The Leaning Tower of Pontius&lt;br&gt;3% of players have this">
 							<a href="http://steamcommunity.com/id/diegocard/stats/35720/achievements/">
-								<img src="./Steam Community __ DC_files/73013673f6aacd149924e5d65e439b9e8aee7605.jpg">
+								<img src="./images/73013673f6aacd149924e5d65e439b9e8aee7605.jpg">
 							</a>
 						</div>
 											<div class="showcase_achievement " data-community-tooltip="Magicka&lt;br&gt;From whence you came...&lt;br&gt;4% of players have this">
 							<a href="http://steamcommunity.com/id/diegocard/stats/42910/achievements/">
-								<img src="./Steam Community __ DC_files/86397704c0d24835a8ac0e21cf06a6c5ff054993.jpg">
+								<img src="./images/86397704c0d24835a8ac0e21cf06a6c5ff054993.jpg">
 							</a>
 						</div>
 											<div class="showcase_achievement " data-community-tooltip="Trine 2&lt;br&gt;Mushroom Murk Collector&lt;br&gt;4% of players have this">
 							<a href="http://steamcommunity.com/id/diegocard/stats/35720/achievements/">
-								<img src="./Steam Community __ DC_files/ceae3829f88341bd533e91aaca5618ac623d4156.jpg">
+								<img src="./images/ceae3829f88341bd533e91aaca5618ac623d4156.jpg">
 							</a>
 						</div>
 																<div class="showcase_achievement plus_more">
@@ -846,7 +859,7 @@ Level 1 Left 4 Dead 2 Badge">
 											<div class="recent_game">
 							<div class="recent_game_content">
 								<div class="game_info">
-									<div class="game_info_cap"><a href="http://steamcommunity.com/app/570"><img src="./Steam Community __ DC_files/d4f836839254be08d8e9dd333ecc9a01782c26d2.jpg"></a></div>
+									<div class="game_info_cap"><a href="http://steamcommunity.com/app/570"><img src="./images/d4f836839254be08d8e9dd333ecc9a01782c26d2.jpg"></a></div>
 									<div class="game_info_details">
 										1,889 hrs on record<br>
 																																	last played on 9 Feb																														</div>
@@ -860,7 +873,7 @@ Level 1 Left 4 Dead 2 Badge">
 						<div class="game_info_badge">
 							<div class="game_info_badge_icon">
 								<a href="http://steamcommunity.com/id/diegocard/gamecards/570">
-									<img src="./Steam Community __ DC_files/05b1b9d504df01096b406777be0d7331d995cf9e.png" class="badge_icon small">
+									<img src="./images/05b1b9d504df01096b406777be0d7331d995cf9e.png" class="badge_icon small">
 								</a>
 							</div>
 							<div class="game_info_badge_description">
@@ -884,7 +897,7 @@ Level 1 Left 4 Dead 2 Badge">
 											<div class="recent_game">
 							<div class="recent_game_content">
 								<div class="game_info">
-									<div class="game_info_cap"><a href="http://steamcommunity.com/app/209670"><img src="./Steam Community __ DC_files/ddd5f720fc2968c4a8fe15c2e8a428f3b5936e86.jpg"></a></div>
+									<div class="game_info_cap"><a href="http://steamcommunity.com/app/209670"><img src="./images/ddd5f720fc2968c4a8fe15c2e8a428f3b5936e86.jpg"></a></div>
 									<div class="game_info_details">
 										0.4 hrs on record<br>
 																																	last played on 8 Feb																														</div>
@@ -908,17 +921,17 @@ Level 1 Left 4 Dead 2 Badge">
 						<div class="achievement_icons">
 																						<div class="game_info_achievement" data-community-tooltip="Aren't You Clever">
 									<a href="http://steamcommunity.com/id/diegocard/stats/209670/achievements/">
-										<img src="./Steam Community __ DC_files/cacae3302df649c0d5a2109c50fd9bfd1a405471.jpg">
+										<img src="./images/cacae3302df649c0d5a2109c50fd9bfd1a405471.jpg">
 									</a>
 								</div>
 															<div class="game_info_achievement" data-community-tooltip="So That's What It's About">
 									<a href="http://steamcommunity.com/id/diegocard/stats/209670/achievements/">
-										<img src="./Steam Community __ DC_files/c14723667d99621fbb941c47d871f8ff67295355.jpg">
+										<img src="./images/c14723667d99621fbb941c47d871f8ff67295355.jpg">
 									</a>
 								</div>
 															<div class="game_info_achievement" data-community-tooltip="Hello There!">
 									<a href="http://steamcommunity.com/id/diegocard/stats/209670/achievements/">
-										<img src="./Steam Community __ DC_files/ac9cf5ad13fdb8e6d468499ea010402ee18104ed.jpg">
+										<img src="./images/ac9cf5ad13fdb8e6d468499ea010402ee18104ed.jpg">
 									</a>
 								</div>
 																				</div>
@@ -931,7 +944,7 @@ Level 1 Left 4 Dead 2 Badge">
 											<div class="recent_game">
 							<div class="recent_game_content">
 								<div class="game_info">
-									<div class="game_info_cap"><a href="http://steamcommunity.com/app/268130"><img src="./Steam Community __ DC_files/e4c82e2ebe19c5c9180e4eca043e2045a8c74e55.jpg"></a></div>
+									<div class="game_info_cap"><a href="http://steamcommunity.com/app/268130"><img src="./images/e4c82e2ebe19c5c9180e4eca043e2045a8c74e55.jpg"></a></div>
 									<div class="game_info_details">
 										30 hrs on record<br>
 																																	last played on 27 Dec, 2017																														</div>
@@ -955,27 +968,27 @@ Level 1 Left 4 Dead 2 Badge">
 						<div class="achievement_icons">
 																						<div class="game_info_achievement" data-community-tooltip="Lightning Strike">
 									<a href="http://steamcommunity.com/id/diegocard/stats/268130/achievements/">
-										<img src="./Steam Community __ DC_files/37178cb5ec23ca94ad654eebb063aa09253c18ec.jpg">
+										<img src="./images/37178cb5ec23ca94ad654eebb063aa09253c18ec.jpg">
 									</a>
 								</div>
 															<div class="game_info_achievement" data-community-tooltip="One Careful Owner">
 									<a href="http://steamcommunity.com/id/diegocard/stats/268130/achievements/">
-										<img src="./Steam Community __ DC_files/3a112bbd2de3788256985839fb118887dfa6edca.jpg">
+										<img src="./images/3a112bbd2de3788256985839fb118887dfa6edca.jpg">
 									</a>
 								</div>
 															<div class="game_info_achievement" data-community-tooltip="Gold Text">
 									<a href="http://steamcommunity.com/id/diegocard/stats/268130/achievements/">
-										<img src="./Steam Community __ DC_files/5236ce834dea7c1f666ebd5e54fee22d8c8a57a7.jpg">
+										<img src="./images/5236ce834dea7c1f666ebd5e54fee22d8c8a57a7.jpg">
 									</a>
 								</div>
 															<div class="game_info_achievement" data-community-tooltip="Outside the Box">
 									<a href="http://steamcommunity.com/id/diegocard/stats/268130/achievements/">
-										<img src="./Steam Community __ DC_files/0cb4d61695ecc9eab118e1168de6a8bd042ce2b3.jpg">
+										<img src="./images/0cb4d61695ecc9eab118e1168de6a8bd042ce2b3.jpg">
 									</a>
 								</div>
 															<div class="game_info_achievement" data-community-tooltip="Self Help">
 									<a href="http://steamcommunity.com/id/diegocard/stats/268130/achievements/">
-										<img src="./Steam Community __ DC_files/8982468cc2ce694b4e0148649f59f5b07db3d3d5.jpg">
+										<img src="./images/8982468cc2ce694b4e0148649f59f5b07db3d3d5.jpg">
 									</a>
 								</div>
 																						<div class="game_info_achievement plus_more" onclick="window.location='http://steamcommunity.com/id/diegocard/stats/268130/achievements/'">
@@ -1031,7 +1044,7 @@ Level 1 Left 4 Dead 2 Badge">
 			<div class="commentthread_entry">
 				<div class="commentthread_user_avatar playerAvatar online">
 					<a href="http://steamcommunity.com/id/diegocard" data-miniprofile="48557075">
-						<img src="./Steam Community __ DC_files/f65972a198c6d809f60e65a2cbfce2781d620dc6.jpg" srcset="http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/avatars/f6/f65972a198c6d809f60e65a2cbfce2781d620dc6.jpg 1x, http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/avatars/f6/f65972a198c6d809f60e65a2cbfce2781d620dc6_medium.jpg 2x">					</a>
+						<img src="./images/f65972a198c6d809f60e65a2cbfce2781d620dc6.jpg" srcset="http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/avatars/f6/f65972a198c6d809f60e65a2cbfce2781d620dc6.jpg 1x, http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/avatars/f6/f65972a198c6d809f60e65a2cbfce2781d620dc6_medium.jpg 2x">					</a>
 				</div>
 				<div class="commentthread_entry_quotebox">
 					<textarea rows="1" class="commentthread_textarea" name="commentthread_Profile_76561198008822803_0_textarea" id="commentthread_Profile_76561198008822803_0_textarea" placeholder="Add a comment" style="overflow: hidden; height: 20px;"></textarea>
@@ -1072,7 +1085,7 @@ Level 1 Left 4 Dead 2 Badge">
 </div>
 
 	<div id="reportAbuseModal" style="display: none;">
-		<div id="reportAbuseModalClose"><a href="javascript:hideModal('reportAbuseModal')"><img src="./Steam Community __ DC_files/modalClose2.gif" width="11" height="11" border="0"></a></div>
+		<div id="reportAbuseModalClose"><a href="javascript:hideModal('reportAbuseModal')"><img src="./images/modalClose2.gif" width="11" height="11" border="0"></a></div>
 		<h1>Report Violation</h1>
 		<div class="reportAbuseModalRule"></div>
 		<div id="reportAbuseModalContents">
@@ -1139,7 +1152,7 @@ Level 1 Left 4 Dead 2 Badge">
 	<div id="footer_responsive_optin_spacer"></div>
 	<div id="footer">
 		<div class="footer_content">
-			<span id="footerLogo"><img src="./Steam Community __ DC_files/footerLogo_valve.png" width="96" height="26" border="0" alt="Valve Logo"></span>
+			<span id="footerLogo"><img src="./images/footerLogo_valve.png" width="96" height="26" border="0" alt="Valve Logo"></span>
 			<span id="footerText">
 				© Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.<br>Some geospatial data on this website is provided by <a href="https://steamcommunity.com/linkfilter/?url=http://www.geonames.org" target="_blank" rel="noreferrer">geonames.org</a>.				<br>
 									<span class="valve_links">
