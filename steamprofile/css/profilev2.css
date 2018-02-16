@@ -54,7 +54,6 @@ body.profile_page.flat_page #footer_spacer {
 	max-width: 976px;
 	min-height: 224px;
 	margin: 0 auto;
-
 	background-image: url( 'http://community.edgecast.steamstatic.com/public/images/profile/profile_header_bg_texture.jpg' );
 	background-repeat: no-repeat;
 	background-position: center;
