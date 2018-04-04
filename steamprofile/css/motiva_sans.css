@@ -15,63 +15,63 @@
 
 @font-face {
 	font-family: 'Motiva Sans';
-	src: url('http://community.edgecast.steamstatic.com/public/shared/fonts/MotivaSans-Regular.ttf') format('truetype');
+	src: url('../fonts/MotivaSans-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Motiva Sans';
-	src: url('http://community.edgecast.steamstatic.com/public/shared/fonts/MotivaSans-Light.ttf') format('truetype');
+	src: url('../fonts/MotivaSans-Light.ttf') format('truetype');
 	font-weight: 300; /* Light */
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Motiva Sans';
-	src: url('http://community.edgecast.steamstatic.com/public/shared/fonts/MotivaSans-Thin.ttf') format('truetype');
+	src: url('../fonts/MotivaSans-Thin.ttf') format('truetype');
 	font-weight: 200; /* Ultra-Light / Thin */
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Motiva Sans';
-	src: url('http://community.edgecast.steamstatic.com/public/shared/fonts/MotivaSans-Medium.ttf') format('truetype');
+	src: url('../fonts/MotivaSans-Medium.ttf') format('truetype');
 	font-weight: 500; /* Medium */
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Motiva Sans';
-	src: url('http://community.edgecast.steamstatic.com/public/shared/fonts/MotivaSans-Bold.ttf') format('truetype');
+	src: url('../fonts/MotivaSans-Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Motiva Sans';
-	src: url('http://community.edgecast.steamstatic.com/public/shared/fonts/motiva-sans-regular-italic.ttf') format('truetype');
+	src: url('../fonts/motiva-sans-regular-italic.ttf') format('truetype');
 	font-weight: normal;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Motiva Sans';
-	src: url('http://community.edgecast.steamstatic.com/public/shared/fonts/motiva-sans-light-italic.ttf') format('truetype');
+	src: url('../fonts/motiva-sans-light-italic.ttf') format('truetype');
 	font-weight: 300; /* Light */
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Motiva Sans';
-	src: url('http://community.edgecast.steamstatic.com/public/shared/fonts/motiva-sans-bold-italic.ttf') format('truetype');
+	src: url('../fonts/motiva-sans-bold-italic.ttf') format('truetype');
 	font-weight: bold;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Motiva Sans';
-	src: url('http://community.edgecast.steamstatic.com/public/shared/fonts/MotivaSans-Black.ttf') format('truetype');
+	src: url('../fonts/MotivaSans-Black.ttf') format('truetype');
 	font-weight: 900; /* Black */
 	font-style: normal;
 }
