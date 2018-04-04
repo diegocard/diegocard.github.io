@@ -7,8 +7,6 @@ div.profile_page {
 
 body.profile_page,
 div.profile_page {
-	background-image: url( 'http://community.edgecast.steamstatic.com/public/images/profile/profile_bg.jpg' );
-	background-repeat: repeat-x;
 	background-color: #262627;
 }
 
@@ -42,21 +40,18 @@ body.profile_page.flat_page #footer_spacer {
 	position: relative;
 	max-width: 1018px;
 	min-height: 224px;
-	padding-bottom: 16px;
 	margin: 0 auto;
-
-	background-image: url( 'http://community.edgecast.steamstatic.com/public/images/profile/profile_header_bg.png' );
 	background-repeat: no-repeat;
 	background-position: center bottom;
 }
 
 .profile_header_bg_texture {
+	background: #252a36;
+    box-shadow: 0px 6px 16px 1px #000;
 	max-width: 976px;
 	min-height: 224px;
 	margin: 0 auto;
-	background-image: url( 'http://community.edgecast.steamstatic.com/public/images/profile/profile_header_bg_texture.jpg' );
-	background-repeat: no-repeat;
-	background-position: center;
+	border-bottom: 1px solid #000;
 }
 
 .profile_header {
@@ -367,12 +362,12 @@ background: -webkit-linear-gradient( top, #3c597b 5%, #282f3d 95%);background: l
 
 .profile_content {
 	position: relative;
+	
+    background: #1d1d1d;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
 
-	background-image: url( 'http://community.edgecast.steamstatic.com/public/images/profile/profile_content_bg.png' );
-	background-position: center;
-	background-repeat: repeat-y;
-
-	padding: 0 12px 64px 12px;
+	padding: 16px 12px 64px 12px;
 	width: 926px;
 	margin: 0 auto;
 
@@ -424,8 +419,7 @@ background: -webkit-linear-gradient( top, #3c597b 5%, #282f3d 95%);background: l
 
 .profile_customization {
 	position: relative;
-
-	background-image: url('http://community.edgecast.steamstatic.com/public/images/profile/showcase_bg.png');
+	background-image: url('../images/edgecast/showcase_bg.png');
 	background-position: top left;
 	background-repeat: no-repeat;
 	background-color: #141414;
