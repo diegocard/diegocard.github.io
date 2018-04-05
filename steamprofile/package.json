@@ -9,6 +9,7 @@
     "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.2.0",
+    "gulp-inject-css": "^0.3.10",
     "gulp-plumber": "^1.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.4",

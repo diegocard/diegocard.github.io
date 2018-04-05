@@ -8,6 +8,7 @@ let clean = require('gulp-clean');
 let uglifyCSS = require('gulp-uglifycss');
 let connect = require('gulp-connect');
 let watch = require('gulp-watch');
+let injectCSS = require('gulp-inject-css');
 
 let cssFiles = './css/*.css';
 let jsFiles = [
@@ -34,6 +35,13 @@ gulp.task('css', () => {
 		.pipe(uglifyCSS({compatibility: 'ie8'}))
 		.pipe(sourcemaps.write('maps'))
 		.pipe(gulp.dest('dist'));
+});
+
+gulp.task('inject-css', ['css'], () => {
+	return gulp.src('./index-dev.html')
+		.pipe(injectCSS())
+		.pipe(rename("index.html"))
+		.pipe(gulp.dest('./'));
 });
 
 gulp.task('js', () => {
@@ -63,10 +71,10 @@ gulp.task('server', () => {
 });
 
 gulp.task('watch-and-reload', ['build'], () => {
-	watch(['javascript/**','css/**','./*.html'], () => {
+	watch(['javascript/**','css/**','./index-dev.html'], () => {
 		gulp.start('build');
 	}).pipe(connect.reload());
 });
 
-gulp.task('build', ['clean', 'css', 'js']);
+gulp.task('build', ['clean', 'inject-css', 'js']);
 gulp.task('watch', ['build', 'watch-and-reload', 'server']);
