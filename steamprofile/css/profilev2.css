@@ -419,7 +419,7 @@ background: -webkit-linear-gradient( top, #3c597b 5%, #282f3d 95%);background: l
 
 .profile_customization {
 	position: relative;
-	background-image: url('../images/edgecast/showcase_bg.png');
+	background-image: url('./images/edgecast/showcase_bg.png');
 	background-position: top left;
 	background-repeat: no-repeat;
 	background-color: #141414;

@@ -352,7 +352,7 @@ background: -webkit-linear-gradient( top, #525151 5%, #292827 95%);background: l
 .pulldown {
 	padding-left: 5px;
 	padding-right: 18px;
-	background-image: url( '../images/edgecast/btn_arrow_down_padded.png' );
+	background-image: url( './images/edgecast/btn_arrow_down_padded.png' );
 	background-position: right center;
 	background-repeat: no-repeat;
 
@@ -606,7 +606,7 @@ body.v6 .popup_block_new .popup_body.popup_menu {
 }
 
 .friendPlayerLevel.lvl_900 {
-	background-image: url( '../images/edgecast/levels_arrows.png' );
+	background-image: url( './images/edgecast/levels_arrows.png' );
 	text-shadow: 1px 1px #1a1a1a;
 }
 
@@ -660,7 +660,7 @@ body.v6 .popup_block_new .popup_body.popup_menu {
 	text-shadow: 1px 1px #1a1a1a;
 }
 .friendPlayerLevel.lvl_2000 {
-	background-image: url('../images/edgecast/levels_geo_1-2.png?v=2' );
+	background-image: url('./images/edgecast/levels_geo_1-2.png?v=2' );
 	text-shadow: 1px 1px #1a1a1a;
 }
 .friendPlayerLevel.lvl_2100 {
@@ -1142,7 +1142,7 @@ div#global_header .activebg {
 }
 
 .header_installsteam_btn_gray .header_installsteam_btn_leftcap, .header_installsteam_btn_gray .header_installsteam_btn_rightcap, .header_installsteam_btn_gray .header_installsteam_btn_content {
-	background-image: url( '../images/edgecast/btn_header_installsteam_gray.png?v=1' );
+	background-image: url( './images/edgecast/btn_header_installsteam_gray.png?v=1' );
 }
 
 .header_installsteam_btn_leftcap {
