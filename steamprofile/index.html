@@ -17,7 +17,7 @@
 	<link href="./dist/app.min.css" rel="stylesheet" type="text/css">
 
 	<!-- JavaScript -->
-	<script type="text/javascript" src="./dist/app.min.js"></script>
+	<script type="text/javascript" src="./dist/app.min.js" async></script>
 
 </head>
 <body class="flat_page profile_page  responsive_page">
@@ -159,13 +159,6 @@
 					</a>
 				</div>
 		
-				<script type="text/javascript">
-					jQuery(function($) {
-						$('.tooltip').v_tooltip();
-						$('#global_header .supernav').v_tooltip({'location':'bottom', 'destroyWhenDone': false, 'tooltipClass': 'supernav_content', 'offsetY':-4, 'offsetX': 1, 'horizontalSnap': 4, 'tooltipParent': '#global_header .supernav_container', 'correctForScreenSize': false});
-					});
-				</script>
-
 				<!-- START global actions -->
 				<div id="global_actions">
 					<div id="global_action_menu">
@@ -180,8 +173,7 @@
 					
 						<!-- START notification inbox area -->
 						<div id="header_notification_area">
-							<script type="text/javascript">$J(EnableNotificationCountPolling);</script>
-
+							
 							<div id="header_notification_link" class="header_notification_btn global_header_toggle_button notification_count_total_ctn no_notifications" onclick="ShowMenu(this, 'header_notification_dropdown', 'right' );">
 								<span class="notification_count">0</span>
 								<span class="header_notification_envelope">
@@ -277,9 +269,6 @@
 								<a class="popup_menu_item" href="http://steamcommunity.com/id/diegocard/">View steam profile</a>
 							</div>
 						</div>
-						<script type="text/javascript">
-							RegisterFlyout( 'account_language_pulldown', 'language_dropdown', 'leftsubmenu', 'bottomsubmenu', true );
-						</script>
 						<!-- END account dropdown -->
 
 						<div id="header_wallet_ctn">
@@ -295,32 +284,8 @@
 
 			</div>
 		</div>
-	<script type="text/javascript">
-		g_sessionID = "b87c7f9a58a5bd344df8447f";
-		g_steamID = "76561198008822803";
 
-		// We always want to have the timezone cookie set for PHP to use
-		setTimezoneCookies();
-
-		$J( function() {
-
-			InitMiniprofileHovers();
-			InitEmoticonHovers();
-			window.BindCommunityTooltip = function( $Selector ) { $Selector.v_tooltip( {'tooltipClass': 'community_tooltip', 'dataName': 'communityTooltip' } ); };
-			BindCommunityTooltip( $J('[data-community-tooltip]') );
-		});
-
-		$J( function() { InitEconomyHovers( "http:\/\/community.edgecast.steamstatic.com\/public\/css\/skin_1\/economy.css?v=q6EkkWwqjgQx", "http:\/\/community.edgecast.steamstatic.com\/public\/javascript\/economy_common.js?v=tsXdRVB0yEaR&l=english", "http:\/\/community.edgecast.steamstatic.com\/public\/javascript\/economy.js?v=DNiCDdc9ihXn&l=english" );});
-	</script>
-	
 	<div class="responsive_page_template_content">
-
-		<script type="text/javascript">
-			g_rgProfileData = {"url":"http:\/\/steamcommunity.com\/id\/diegocard\/","steamid":"76561198008822803","personaname":"DC","summary":" <b>Contact<\/b> <br>• Mail: <a href=\"mailto:diegocard@gmail.com\">diegocard@gmail.com<\/a><br>• Phone: (+598) 99687570<br><br>"};
-			$J( function() {
-				window.Responsive_ReparentItemsInResponsiveMode && Responsive_ReparentItemsInResponsiveMode( '.responsive_groupfriends_element', $J('#responsive_groupfriends_element_ctn') );
-			});
-		</script>
 
 		<div class="no_header profile_page  ">
 
@@ -391,7 +356,6 @@
 								<div class="profile_summary_footer" style="display: none;">
 									<span class="whiteLink">View more info</span>
 								</div>
-								<script type="text/javascript"> $J( function() { InitProfileSummary( g_rgProfileData['summary'] ); } ); </script>
 							</div>
 						</div>
 					</div>
@@ -989,24 +953,6 @@
 				
 						<!-- START comment area -->
 						<div class="profile_comment_area">
-							<script type="text/javascript">
-								$J(function () {
-									InitializeCommentThread("Profile", "Profile_76561198008822803_0", {
-										"feature": "-1",
-										"feature2": 0,
-										"owner": "76561198008822803",
-										"total_count": 0,
-										"start": 0,
-										"pagesize": 6,
-										"has_upvoted": 0,
-										"upvotes": 0,
-										"votecountid": null,
-										"voteupid": null,
-										"commentcountid": null,
-										"subscribed": false
-									}, 'http://steamcommunity.com/comment/Profile/', 40);
-								});
-							</script>
 							<div class="commentthread_area" id="commentthread_Profile_76561198008822803_0_area">
 								<div class="commentthread_header">
 									<div class="commentthread_paging " id="commentthread_Profile_76561198008822803_0_pagecontrols" style="display: none;">
