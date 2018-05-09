@@ -17,7 +17,6 @@ var filesToCache = [
 	"../images/icons/icon-152x152.png",
 	"../images/icons/icon-192x192.png",
 	"../images/icons/icon-256x256.png",
-	"../index.html",
 	"../manifest.json",
 	"../dist/app.min.js",
 	"../dist/app.min.css",
