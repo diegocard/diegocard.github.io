@@ -49,3 +49,9 @@ $J(function () {
         "subscribed": false
     }, 'http://steamcommunity.com/comment/Profile/', 40);
 });
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('./javascript/service-worker.js')
+        .then(function() { console.log('Service Worker Registered'); });
+}

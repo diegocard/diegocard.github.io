@@ -25,7 +25,8 @@ let jsFiles = [
 	'./javascript/stickers.js',
 	'./javascript/reportedcontent.js',
 	'./javascript/shared_responsive_adapter.js',
-	'./javascript/*.js'
+	'./javascript/*.js',
+	'./service-worker.js'
 ]
 
 gulp.task('css', () => {
