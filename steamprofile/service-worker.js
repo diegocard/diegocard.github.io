@@ -3,7 +3,9 @@ self.addEventListener('install', function(e) {
 		caches.open('diegocard').then(function(cache) {
 			return cache.addAll([
 				'/',
-				'index.html',
+				'/steamprofile',
+				'/index.html',
+				'/steamprofile/index.html',
 				'dist/app.min.js',
 				'dist/app.min.css'
 			]);
