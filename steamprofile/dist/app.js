@@ -19906,7 +19906,7 @@ $J(function () {
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-        .register('./service-worker.js')
+        .register('../service-worker.js')
         .then(function() { console.log('Service Worker Registered'); });
     navigator.serviceWorker
         .ready
@@ -19932,7 +19932,7 @@ self.addEventListener('activate', function(event) {
   
 self.addEventListener('fetch', function(event) {
 	event.respondWith(
-	caches.open('diegocard')
+		caches.open('diegocard')
 		.then(function(cache) {
 			cache.match(event.request, {ignoreSearch: true})
 		})
