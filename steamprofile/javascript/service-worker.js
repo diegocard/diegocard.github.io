@@ -1,8 +1,8 @@
 var dataCacheName = 'template-pwa';
 var cacheName = 'template-pwa';
 var filesToCache = [
-	'/',
-	"../fonts",
+	"../",
+	"../index.html",
 	"../fonts/motiva-sans-bold-italic.ttf",
 	"../fonts/motiva-sans-light-italic.ttf",
 	"../fonts/motiva-sans-regular-italic.ttf",
@@ -12,8 +12,6 @@ var filesToCache = [
 	"../fonts/MotivaSans-Medium.ttf",
 	"../fonts/MotivaSans-Regular.ttf",
 	"../fonts/MotivaSans-Thin.ttf",
-	"../images",
-	"../images/icons",
 	"../images/icons/icon-128x128.png",
 	"../images/icons/icon-144x144.png",
 	"../images/icons/icon-152x152.png",
@@ -21,7 +19,6 @@ var filesToCache = [
 	"../images/icons/icon-256x256.png",
 	"../index.html",
 	"../manifest.json",
-	"../dist",
 	"../dist/app.min.js",
 	"../dist/app.min.css",
 	"../service-worker.js"
