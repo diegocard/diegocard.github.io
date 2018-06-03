@@ -1,7 +1,7 @@
 {
 	"name": "Diego Cardozo Resume",
 	"description": "Diego Cardozo's Resume",
-	"short_name": "Diego Cardozo Resume",
+	"short_name": "DC Resume",
 	"icons": [{
 		"src": "./images/icons/icon-128x128.png",
 			"sizes": "128x128",
