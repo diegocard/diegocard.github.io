@@ -1,0 +1,1016 @@
+{
+  "authorizations": {
+    "someuser@somemail.com": {
+      "authLevel": "admin"
+    },
+    "james@mail.com": {
+      "authLevel": "owner",
+      "containers": [
+        "125-container",
+        "124-container",
+        "123-container"
+      ]
+    },
+    "steven@mail.com": {
+      "authLevel": "admin"
+    },
+    "kramer@mail.com": {
+      "authLevel": "owner",
+      "containers": [
+        "123-container"
+      ]
+    },
+    "jerry@mail.com": {
+      "authLevel": "admin"
+    },
+    "elaine@mail.com": {
+      "authLevel": "owner",
+      "containers": [
+        "125-container"
+      ]
+    },
+    "george@mail.com": {
+      "authLevel": "admin"
+    },
+    "newman@mail.com": {
+      "authLevel": "owner",
+      "containers": [
+        "125-container",
+        "124-container",
+        "123-container"
+      ]
+    },
+    "mail1@mail.com": {
+      "authLevel": "owner",
+      "containers": [
+        "123-container"
+      ]
+    },
+    "mail2@mail.com": {
+      "authLevel": "owner",
+      "containers": [
+        "123-container"
+      ]
+    },
+    "mail3@mail.com": {
+      "authLevel": "owner",
+      "containers": [
+        "123-container"
+      ]
+    },
+    "mail4@mail.com": {
+      "authLevel": "owner",
+      "containers": [
+        "124-container"
+      ]
+    },
+    "mail5@mail.com": {
+      "authLevel": "owner",
+      "containers": [
+        "124-container"
+      ]
+    },
+    "mail6@mail.com": {
+      "authLevel": "owner",
+      "containers": [
+        "124-container"
+      ]
+    },
+    "mail7@mail.com": {
+      "authLevel": "owner",
+      "containers": [
+        "124-container",
+        "125-container"
+      ]
+    },
+    "mail8@mail.com": {
+      "authLevel": "owner",
+      "containers": [
+        "125-container",
+        "124-container",
+        "123-container"
+      ]
+    },
+    "mail9@mail.com": {
+      "authLevel": "owner",
+      "containers": [
+        "123-container"
+      ]
+    },
+    "frank@mail.com": {
+      "authLevel": "admin"
+    }
+  },
+  "logs": {
+    "grants": {
+      "success": [
+        {
+          "userId": "someuser@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535938330580
+        },
+        {
+          "userId": "someuser@somemail.com",
+          "authLevel": "owner",
+          "container": "124-container",
+          "timestamp": 1535938342767
+        },
+        {
+          "userId": "someuser@somemail.com",
+          "authLevel": "admin",
+          "container": "*",
+          "timestamp": 1535938392190
+        },
+        {
+          "userId": "james@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535952740786
+        },
+        {
+          "userId": "james@mail.com",
+          "authLevel": "owner",
+          "container": "124-container",
+          "timestamp": 1535952743650
+        },
+        {
+          "userId": "james@mail.com",
+          "authLevel": "owner",
+          "container": "125-container",
+          "timestamp": 1535952745320
+        },
+        {
+          "userId": "steven@mail.com",
+          "authLevel": "admin",
+          "container": "*",
+          "timestamp": 1535952776646
+        },
+        {
+          "userId": "kramer@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535952788485
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "admin",
+          "container": "*",
+          "timestamp": 1535952813370
+        },
+        {
+          "userId": "elaine@mail.com",
+          "authLevel": "owner",
+          "container": "125-container",
+          "timestamp": 1535952839665
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "container": "*",
+          "timestamp": 1535952845903
+        },
+        {
+          "userId": "newman@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535952887432
+        },
+        {
+          "userId": "newman@mail.com",
+          "authLevel": "owner",
+          "container": "124-container",
+          "timestamp": 1535952889436
+        },
+        {
+          "userId": "newman@mail.com",
+          "authLevel": "owner",
+          "container": "125-container",
+          "timestamp": 1535952891102
+        },
+        {
+          "userId": "mail1@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535952943168
+        },
+        {
+          "userId": "mail2@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535952945366
+        },
+        {
+          "userId": "mail3@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535952947422
+        },
+        {
+          "userId": "mail4@mail.com",
+          "authLevel": "owner",
+          "container": "124-container",
+          "timestamp": 1535952952319
+        },
+        {
+          "userId": "mail5@mail.com",
+          "authLevel": "owner",
+          "container": "124-container",
+          "timestamp": 1535952955850
+        },
+        {
+          "userId": "mail6@mail.com",
+          "authLevel": "owner",
+          "container": "124-container",
+          "timestamp": 1535952958329
+        },
+        {
+          "userId": "mail7@mail.com",
+          "authLevel": "owner",
+          "container": "125-container",
+          "timestamp": 1535952964321
+        },
+        {
+          "userId": "mail7@mail.com",
+          "authLevel": "owner",
+          "container": "124-container",
+          "timestamp": 1535952973800
+        },
+        {
+          "userId": "mail8@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535953017488
+        },
+        {
+          "userId": "mail8@mail.com",
+          "authLevel": "owner",
+          "container": "124-container",
+          "timestamp": 1535953020507
+        },
+        {
+          "userId": "mail8@mail.com",
+          "authLevel": "owner",
+          "container": "125-container",
+          "timestamp": 1535953024106
+        },
+        {
+          "userId": "mail9@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535953391537
+        },
+        {
+          "userId": "frank@mail.com",
+          "authLevel": "admin",
+          "container": "*",
+          "timestamp": 1536017860378
+        }
+      ],
+      "failed": [
+        {
+          "userId": "someuser@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535938337136,
+          "reason": "User is already an owner for the given container"
+        },
+        {
+          "userId": "james@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535952751746,
+          "reason": "User is already an owner for the given container"
+        },
+        {
+          "userId": "mail7@mail.com",
+          "authLevel": "owner",
+          "container": "125-container",
+          "timestamp": 1535952975643,
+          "reason": "User is already an owner for the given container"
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535953931021,
+          "reason": "User is already an admin"
+        }
+      ]
+    },
+    "access": {
+      "success": [
+        {
+          "userId": "someuser@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535569200000
+        },
+        {
+          "userId": "someuser@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535569200000
+        },
+        {
+          "userId": "someuser@somemail.com",
+          "authLevel": "owner",
+          "container": "124-container",
+          "timestamp": 1535569200000
+        },
+        {
+          "userId": "someuser@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535569200000
+        },
+        {
+          "userId": "someuser@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535569200000
+        },
+        {
+          "userId": "james@mail.com",
+          "authLevel": "owner",
+          "container": "125-container",
+          "timestamp": 1535569200000
+        },
+        {
+          "userId": "james@mail.com",
+          "authLevel": "owner",
+          "container": "125-container",
+          "timestamp": 1535569200000
+        },
+        {
+          "userId": "james@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535569200000
+        },
+        {
+          "userId": "james@mail.com",
+          "authLevel": "owner",
+          "container": "125-container",
+          "timestamp": 1535569200000
+        },
+        {
+          "userId": "kramer@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535569200000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535569200000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535651100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535651100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535651100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535651100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535651100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535651100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535651100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535651100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535651100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535651100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535651100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535651100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535751100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535751100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535751100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535751100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535751100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535751100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535751100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535751100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535751100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535751100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535751100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535751100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535751100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535751100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535801100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535901100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535901100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535901100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535901100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535901100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535901100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535901100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535901100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535901100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535901100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535901100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535901100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1536001100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1536001100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1536001100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1536001100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1536001100000
+        },
+        {
+          "userId": "jerry@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1536001100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1536001100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1536001100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1536001100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1536001100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1536001100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1536001100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1536001100000
+        },
+        {
+          "userId": "george@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1536001100000
+        }
+      ],
+      "failed": [
+        {
+          "userId": "james@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535569200000,
+          "reason": "Owner does not have authorization"
+        },
+        {
+          "userId": "kramer@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535569200000,
+          "reason": "Owner does not have authorization"
+        },
+        {
+          "userId": "yrrej@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535569200000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "yrrej@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535569200000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "yrrej@mail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535651100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "james@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535651100000,
+          "reason": "Owner does not have authorization"
+        },
+        {
+          "userId": "james@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535651100000,
+          "reason": "Owner does not have authorization"
+        },
+        {
+          "userId": "james@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535651100000,
+          "reason": "Owner does not have authorization"
+        },
+        {
+          "userId": "james@mail.com",
+          "authLevel": "admin",
+          "timestamp": 1535651100000,
+          "reason": "Owner does not have authorization"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535651100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535651100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535651100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535751100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535751100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535751100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535751100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535751100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535751100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535801100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535801100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535801100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535801100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535801100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535801100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535801100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535801100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535901100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535901100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535901100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535901100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1535901100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535901100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535901100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1535901100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1536001100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1536001100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1536001100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1536001100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1536001100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "admin",
+          "timestamp": 1536001100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1536001100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1536001100000,
+          "reason": "User not registered"
+        },
+        {
+          "userId": "jerry@somemail.com",
+          "authLevel": "owner",
+          "container": "123-container",
+          "timestamp": 1536001100000,
+          "reason": "User not registered"
+        }
+      ]
+    }
+  }
+}
