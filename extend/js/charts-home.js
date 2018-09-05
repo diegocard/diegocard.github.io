@@ -47,8 +47,6 @@ function drawCharts(analyticsData) {
     var dayLabels = [days[today+1], days[(today+2)%7], days[(today+3)%7], days[(today+4)%7], days[(today+5)%7], days[(today+6)%7], days[(today)%7]];
     var maxAdminSuccess = Math.max.apply(Math, analyticsData.thisWeek.adminSuccess);
     var maxOwnerSuccess = Math.max.apply(Math, analyticsData.thisWeek.ownerSuccess);
-    var minAdminSuccess = Math.min.apply(Math, analyticsData.thisWeek.adminSuccess);
-    var minOwnerSuccess = Math.min.apply(Math, analyticsData.thisWeek.ownerSuccess);
 
     var LINECHART = $('#lineCahrt');
     var myLineChart = new Chart(LINECHART, {
@@ -64,7 +62,7 @@ function drawCharts(analyticsData) {
                 yAxes: [{
                     ticks: {
                         max: Math.max(maxAdminSuccess, maxOwnerSuccess) + 1, // 10
-                        min: Math.min(minAdminSuccess, minOwnerSuccess) // 1
+                        min: 0 // 1
                     },
                     display: true,
                     gridLines: {
