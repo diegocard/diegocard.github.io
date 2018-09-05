@@ -9,7 +9,6 @@ function changeAccessLevel() {
 
 $(function () {
 
-    
     // ------------------------------------------------------- //
     // Datatables
     // ------------------------------------------------------ //    
@@ -17,15 +16,15 @@ $(function () {
     $("#sectionAccess").hide()
     
     $("#btnInsights").click(function() {
-        $("#sectionInsights").show()
-        $("#sectionAccess").hide()
+        $("#sectionInsights").show();
+        $("#sectionAccess").hide();
         $("#btnInsights").toggleClass("wt-active");
         $("#btnAccess").toggleClass("wt-active");
     });
 
     $("#btnAccess").click(function() {
-        $("#sectionInsights").hide()
-        $("#sectionAccess").show()
+        $("#sectionInsights").hide();
+        $("#sectionAccess").show();
         $("#btnInsights").toggleClass("wt-active");
         $("#btnAccess").toggleClass("wt-active");
     });
@@ -157,7 +156,6 @@ $(function () {
             errorPlacement: function (error, element) {
                 // Add the `invalid-feedback` class to the error element
                 error.addClass("invalid-feedback");
-                //console.log(element);
                 if (element.prop("type") === "checkbox") {
                     error.insertAfter(element.siblings("label"));
                 } 

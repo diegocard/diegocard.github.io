@@ -29,7 +29,6 @@ function drawSummary(summaryData) {
 }
 
 function drawCharts(analyticsData) {
-    console.log("analyticsData", analyticsData);
     'use strict';
 
     Chart.defaults.global.defaultFontColor = '#75787c';
@@ -50,8 +49,6 @@ function drawCharts(analyticsData) {
     var maxOwnerSuccess = Math.max.apply(Math, analyticsData.thisWeek.ownerSuccess);
     var minAdminSuccess = Math.min.apply(Math, analyticsData.thisWeek.adminSuccess);
     var minOwnerSuccess = Math.min.apply(Math, analyticsData.thisWeek.ownerSuccess);
-    console.log("analyticsData.thisWeek.adminSuccess", analyticsData.thisWeek.adminSuccess);
-    console.log("analyticsData.thisWeek.ownerSuccess", analyticsData.thisWeek.ownerSuccess);
 
     var LINECHART = $('#lineCahrt');
     var myLineChart = new Chart(LINECHART, {
@@ -322,12 +319,13 @@ function drawCharts(analyticsData) {
     });
 
     // ------------------------------------------------------- //
-    // Sales Bar Chart 1
+    // Bar Chart 1
     // ------------------------------------------------------ //
+
     var adminWeeklyEvolution = analyticsData.thisWeek.adminSuccess.map(function(item, index) {
         return item - analyticsData.previousWeek.adminSuccess[index];
     });
-    var adminWeeklyDifference = adminWeeklyEvolution.reduce((a, b) => a + b, 0)
+    var adminWeeklyDifference = adminWeeklyEvolution.reduce(function(a, b) { return a + b }, 0);
     $("#adminEvolution").html(adminWeeklyDifference > 0 ? "+" + adminWeeklyDifference : "-" + adminWeeklyDifference);
     var BARCHART1 = $('#salesBarChart1');
     var barChartHome = new Chart(BARCHART1, {
@@ -387,13 +385,13 @@ function drawCharts(analyticsData) {
     });
 
     // ------------------------------------------------------- //
-    // Sales Bar Chart 21
+    // Bar Chart 21
     // ------------------------------------------------------ //
     var BARCHART1 = $('#salesBarChart2');
     var ownerWeeklyEvolution = analyticsData.thisWeek.ownerSuccess.map(function(item, index) {
         return item - analyticsData.previousWeek.ownerSuccess[index];
     });
-    var ownerWeeklyDifference = ownerWeeklyEvolution.reduce((a, b) => a + b, 0)
+    var ownerWeeklyDifference = ownerWeeklyEvolution.reduce(function(a, b) { return a + b }, 0);
     $("#ownerEvolution").html(ownerWeeklyDifference > 0 ? "+" + ownerWeeklyDifference : "-" + ownerWeeklyDifference);
     var barChartHome = new Chart(BARCHART1, {
         type: 'bar',
@@ -456,10 +454,10 @@ function drawCharts(analyticsData) {
     // Pie Chart
     // ------------------------------------------------------ //
     var PIECHARTEXMPLE    = $('#visitPieChart');
-    var adminWeeklyBreakdownSuccess = analyticsData.thisWeek.adminSuccess.reduce((a, b) => a + b, 0);
-    var adminWeeklyBreakdownFailed = analyticsData.thisWeek.adminFailed.reduce((a, b) => a + b, 0);
-    var ownerWeeklyBreakdownSuccess = analyticsData.thisWeek.ownerSuccess.reduce((a, b) => a + b, 0);
-    var ownerWeeklyBreakdownFailed = analyticsData.thisWeek.ownerFailed.reduce((a, b) => a + b, 0);
+    var adminWeeklyBreakdownSuccess = analyticsData.thisWeek.adminSuccess.reduce(function(a, b) { return a + b }, 0);
+    var adminWeeklyBreakdownFailed = analyticsData.thisWeek.adminFailed.reduce(function(a, b) { return a + b }, 0);
+    var ownerWeeklyBreakdownSuccess = analyticsData.thisWeek.ownerSuccess.reduce(function(a, b) { return a + b }, 0);
+    var ownerWeeklyBreakdownFailed = analyticsData.thisWeek.ownerFailed.reduce(function(a, b) { return a + b }, 0);
     $("#weeklyBreakdown").html(adminWeeklyBreakdownSuccess + adminWeeklyBreakdownFailed + ownerWeeklyBreakdownSuccess + ownerWeeklyBreakdownFailed);
     var pieChartExample = new Chart(PIECHARTEXMPLE, {
         type: 'pie',

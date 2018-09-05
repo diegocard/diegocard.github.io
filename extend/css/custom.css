@@ -1,1 +1,26 @@
-/* your styles go here */
+#accessTable {
+    width: 100% !important;
+}
+
+.ok {
+    background-color: #28a745;
+    padding: 10px;
+    border: 1px solid #14171d;
+    color: white;
+}
+
+.error {
+    background-color: #b33636;
+    padding: 10px;
+    border: 1px solid #14171d;
+    color: white;
+}
+
+#issueAccessForm {
+    min-height: 420px;
+}
+
+.wt-editor {
+    overflow-y: auto;
+    background: #12141a;
+}
