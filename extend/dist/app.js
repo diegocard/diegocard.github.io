@@ -15993,7 +15993,7 @@ function drawCharts(analyticsData) {
         return item - analyticsData.previousWeek.adminSuccess[index];
     });
     var adminWeeklyDifference = adminWeeklyEvolution.reduce(function(a, b) { return a + b }, 0);
-    $("#adminEvolution").html(adminWeeklyDifference > 0 ? "+" + adminWeeklyDifference : "-" + adminWeeklyDifference);
+    $("#adminEvolution").html(adminWeeklyDifference > 0 ? "+" + adminWeeklyDifference : adminWeeklyDifference);
     var BARCHART1 = $('#salesBarChart1');
     var barChartHome = new Chart(BARCHART1, {
         type: 'bar',
@@ -16059,7 +16059,7 @@ function drawCharts(analyticsData) {
         return item - analyticsData.previousWeek.ownerSuccess[index];
     });
     var ownerWeeklyDifference = ownerWeeklyEvolution.reduce(function(a, b) { return a + b }, 0);
-    $("#ownerEvolution").html(ownerWeeklyDifference > 0 ? "+" + ownerWeeklyDifference : "-" + ownerWeeklyDifference);
+    $("#ownerEvolution").html(ownerWeeklyDifference > 0 ? "+" + ownerWeeklyDifference : ownerWeeklyDifference);
     var barChartHome = new Chart(BARCHART1, {
         type: 'bar',
         options:
