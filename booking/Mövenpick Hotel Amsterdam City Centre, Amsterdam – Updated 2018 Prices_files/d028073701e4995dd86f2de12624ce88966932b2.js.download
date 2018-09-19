@@ -1,0 +1,460 @@
+var _i_ = this._i_ || function() {}, _r_ = this._r_ || function(t) {
+return t;
+};
+
+booking.env.enable_scripts_tracking && (booking.env.scripts_tracking.mlt = {
+loaded:!0,
+run:!1
+}), function() {
+"use strict";
+_i_("da5:c7afc3de"), B.when({
+events:"load",
+action:[ "confirmation", "myreservations", "searchresults", "index", "hotel" ]
+}).run(function(t) {
+_i_("da5:3ae88d41");
+var e, i, n, a, o, r, _, d, s = t("jquery"), l = t("ga-tracker"), c = t("et"), h = "OAZEUfTIcbYfNICYBaaO", f = 0, u = 0, m = 0, p = 0;
+if (!s(".mltt").length) return _r_(!1);
+if (c.track(h) && l.pageviewIsTracked().then(function() {
+_i_("da5:6c9f91ed"), B && B.env && B.env.b_mlt_timeline_snapshot && B.env.b_mlt_timeline_snapshot.length <= 50 && l.trackEvent("MLT", "Timeline Available", B.env.b_mlt_timeline_snapshot), B && B.env && (B.env.mltGAEventsTracking = function(t) {
+_i_("da5:746e4b97"), "string" == typeof t && t.length <= 50 && l.trackEvent("MLT", "Timeline", t), _r_();
+}), _r_();
+}), c && "function" == typeof c.stage && "function" == typeof c.goalWithValue) {
+var g = Math.round((Date.now() - B.env.mltStats.initTime) / 1e3), v = "number" == typeof B.env.mltStats.timeDiff ? B.env.mltStats.timeDiff :g;
+g >= 2 && c.stage(h, 1), navigator && navigator.connection && "number" == typeof navigator.connection.downlink && navigator.connection.downlink < .7 && c.stage(h, 2), navigator && "string" == typeof navigator.userAgent && (navigator.userAgent.indexOf("MSIE ") > -1 || navigator.userAgent.indexOf("Trident/") > -1) && c.stage(h, 3), c.goalWithValue("js_mlt_timeline_load_time_in_ds", v), c.goalWithValue("js_mlt_timeline_num_hover", B.env.mltStats.hover), c.goalWithValue("js_mlt_timeline_num_click", B.env.mltStats.click), c.goalWithValue("js_mlt_timeline_num_scroll", B.env.mltStats.scroll), B.env.mltStats.remove > 0 && c.customGoal(h, 1), B.env.mltStats.hover > 0 && c.customGoal(h, 3), B.env.mltStats.click > 0 && c.customGoal(h, 4), B.env.mltStats.scroll > 0 && c.customGoal(h, 5), B.env.mltStats.mlttWrapper && "function" == typeof B.env.mltStats.mlttWrapper.removeEventListener && "function" == typeof B.env.mltStats.trackHover && "function" == typeof B.env.mltStats.trackClick && (B.env.mltStats.mlttWrapper.removeEventListener("mouseover", B.env.mltStats.trackHover, !1), B.env.mltStats.mlttWrapper.removeEventListener("click", B.env.mltStats.trackClick, !1)), delete B.env.mltStats;
+}
+if (c.track(h)) return _r_();
+if (a = s(".js__mltt__track"), s(".js__mltt__track > *").each(function(t) {
+_i_("da5:56be8ddf"), p += s(this).outerWidth(), _r_();
+}), o = s(".js__mltt__viewport"), d = o.width(), p > d && (B.env.rtl ? (r = "right", i = s(".js__mltt__move_right"), n = s(".js__mltt__move_left")) :(r = "left", n = s(".js__mltt__move_right"), i = s(".js__mltt__move_left")), _ = d - i.outerWidth() - n.outerWidth(), u = d - p, i.show(), a.width(p + "px"), i.click(function(t) {
+_i_("da5:9f72e4fb"), t.preventDefault(), t.stopPropagation(), f -= _, f = Math.max(f, u), a.css(r, f), n.show(), f == u && s(this).hide(), l.trackEvent("MLT", "Timeline", "moveToEnd"), _r_();
+}), n.click(function(t) {
+_i_("da5:a2780a22"), t.preventDefault(), t.stopPropagation(), f += _, f = Math.min(f, m), a.css(r, f), i.show(), f == m && s(this).hide(), l.trackEvent("MLT", "Timeline", "moveToStart"), _r_();
+}), e = s(".js__mltt__scroll_here"), e.length)) {
+if (B.env.rtl) {
+var b = _ + i.filter(":visible").outerWidth(), y = p - e.position().left;
+if (y > b) var w = f - p + e.position().left + e.outerWidth() + 100;
+} else {
+var b = _ + i.filter(":visible").outerWidth(), y = e.position().left + e.outerWidth();
+if (y > b) var w = f - e.position().left + 100;
+}
+w && (f = Math.max(u, w), a.css(r, f), n.show(), f == u && i.hide());
+}
+l.pageviewIsTracked().then(function() {
+_i_("da5:4d160414"), B.env && B.env.b_mlt_timeline_snapshot && B.env.b_mlt_timeline_snapshot.length <= 50 && l.trackEvent("MLT", "Timeline Available", B.env.b_mlt_timeline_snapshot), _r_();
+}), _r_();
+}), _r_();
+}(), booking.jstmpl("mlt_search_dropdown_price", function() {
+_i_("da5:2e6966e0");
+var t = [ "\n    ", '\n	<li class="mltt__dropdown__text--price">', "</li>\n", '\n	<li class="mltt__dropdown__text--unavailable_copy mltt__dropdown__text--unavailable_block">', "/private/mlt_timeline_search_card_num_unavailable/name", '</li>\n	<li class="mltt__dropdown__text--unavailable_copy">', "/private/mlt_timeline_search_card_fully_booked/name", "\n\n", "\n" ], e = [ "b_actual_price" ];
+return _r_(function(i) {
+_i_("da5:2be80ecf");
+var n = "", a = this.fn;
+function o(i) {
+return _i_("da5:4084027a"), i += a.MJ(a.MC(e[0])) ? [ t[1], a.MC(e[0]), t[2] ].join("") :[ t[3], a.ME(t[4], a.MB, a.MN, null), t[5], a.ME(t[6], a.MB, a.MN, null), t[2] ].join(""), i += t[7], _r_(i);
+}
+return n += t[0], n = o(n), n += t[8], _r_(n);
+});
+}()), B.when({
+events:"load",
+action:[ "confirmation", "hotel", "index", "myreservations", "searchresults" ],
+condition:document.querySelector(".js__mltt__dropdown")
+}).run(function(t) {
+_i_("da5:e49cd9d7");
+var e, i, n, a = t("jquery"), o = t("fragment"), r = t("server-data"), _ = t("et"), d = a(".js__mltt__viewport"), s = {}, l = 200, c = 200, h = 500, f = 0, u = [], m = function(t) {
+_i_("da5:d63fccb3");
+var e, i = a("#" + t);
+i.length && (e = i.find("[data-hotel-id]"), e.length && e.each(function() {
+_i_("da5:03c3e270");
+var e = a(this), i = e.find(".js-mltt__dropdown__text--price__loader"), n = s[t][e.data("hotel-id")];
+i.length && i.replaceWith(B.jstmpl("mlt_search_dropdown_price").render(n)), _r_();
+})), _r_();
+}, p = function() {
+_i_("da5:0aa7f9e2");
+var t, e = 0;
+Object && "function" == typeof Object.keys && Object.keys(s).length && Object.keys(s).length == u.length && (a.each(s, function(t, i) {
+_i_("da5:9d202834"), a.each(i, function(t, i) {
+_i_("da5:1ec1ad59"), i && i.b_actual_price && e++, _r_();
+}), _r_();
+}), f && e && (t = parseInt(e / f * 100, 10), t && _.goalWithValue("js_mlt_search_dropdown_availability_percentage", t))), _r_();
+}, g = function(t, e, i, n, a) {
+_i_("da5:d7ec2fe1");
+var r = {
+hotel_ids:e,
+checkin:i,
+checkout:n
+};
+a && (r.nr_adults = a), -1 === u.indexOf(t) && u.push(t), o.call("mlt.hotel_prices", r).then(function(i) {
+_i_("da5:4938e273"), s[t] || (s[t] = i, m(t), f += e.length, p()), _r_();
+}), _r_();
+}, v = function(t) {
+_i_("da5:90ceb25b");
+var e, i, n, o, r, _ = a(t);
+_.length && (e = "" + _.data("dropdown-hotels"), i = _.data("checkin"), n = _.data("checkout"), o = _.data("num-adults"), r = _.data("mltdropdown-id"), !s[r] && e && "string" == typeof e && (e = e.split(","), e.length && i && n && g(r, e, i, n, o))), _r_();
+}, b = function() {
+_i_("da5:d3ac0973");
+var t;
+d.length && (t = d.find('[data-fetch-prices="1"]'), t.length && t.each(function() {
+_i_("da5:b9244584"), v(this), _r_();
+})), _r_();
+}, y = function() {
+_i_("da5:817a50bc"), i && clearTimeout(i), i = setTimeout(function() {
+_i_("da5:7bf4440f"), a(".mltt__dropdown--open").removeClass("mltt__dropdown--open"), _r_();
+}, c), _r_();
+}, w = function(t, e) {
+_i_("da5:e9376441");
+var i, n, o, _, s, l = 0, c = a("#" + e);
+if (d.length && c.length) return o = d.offset().left, n = d.outerWidth(), _ = o + n, s = t.offset().left, i = c.outerWidth(), r && "confirmation" === r.b_action && d.parents(".conf_restructured_content").length ? l = a(".conf_restructured_content").offset().left :d.parents(".lp_flexible_layout_content_wrapper").length ? l = a(".lp_flexible_layout_content_wrapper").offset().left :d.parents("#bodyconstraint").length ? l = a("#bodyconstraint").offset().left :n = _, _r_(s + i > _ ? n - i :s - l - 3);
+_r_();
+}, k = function() {
+_i_("da5:0cc0e8a4");
+var t = a(this), i = t.data("mltdropdown-id");
+e && clearTimeout(e), y(), e = setTimeout(function() {
+_i_("da5:f4ca839a"), i && (a("#" + i).css("left", w(t, i)).addClass("mltt__dropdown--open"), a("body").one("click", y)), _r_();
+}, l), _r_();
+}, j = function() {
+_i_("da5:a422b2aa"), clearTimeout(i), clearTimeout(n), _r_();
+}, x = function() {
+_i_("da5:062bddab");
+var t = a(this);
+a(".js__mltt__dropdown__trigger").on("mouseenter", function() {
+_i_("da5:61b0f3d2"), clearTimeout(n), _r_();
+}), n = setTimeout(function() {
+_i_("da5:4810479d"), t.removeClass("mltt__dropdown--open"), _r_();
+}, h), _r_();
+};
+a(".js__mltt__dropdown__trigger").on("mouseenter", k), a(".js__mltt__dropdown__trigger").on("mouseleave", y), a(".js__mltt__dropdown__trigger").one("mouseenter", function() {
+_i_("da5:64374b1f"), v(this), _r_();
+}), a(".js__mltt__dropdown").on("mouseenter", j), a(".js__mltt__dropdown").on("mouseleave", x), a(".mltt__button, .js__mltt__dropdown__close").on("click", y), r && r.fe_mlt_prefetch_prices && b(), _r_();
+}), B.when({
+events:"load",
+action:[ "confirmation", "hotel", "myreservations", "searchresults" ],
+condition:document.querySelector(".js__mltt_remove_search")
+}).run(function(t) {
+_i_("da5:e945dc71");
+var e = t("jquery"), i = t("et"), n = "OAZEeOFIMNFaO", a = t("server-data"), o = function(t) {
+return _i_("da5:cab45ba0"), a && a.b_mlt_timeline_tracking_data && a.b_mlt_timeline_tracking_data.forEach(function(e) {
+_i_("da5:d6592ce8"), "search" === e.type && e.sid === t && (e.is_delete = 1), _r_();
+}), _r_(a.b_mlt_timeline_tracking_data);
+};
+e(".js__mltt_remove_search").on("click", function(t) {
+_i_("da5:201f2f6a"), t.preventDefault();
+var a = e(this), r = a.data("sid");
+if (!r) return _r_(!1);
+i.customGoal("OAZEUfTIcbYfNICYBaaO", 2);
+var _ = a.parents(".mltt__dropdown").attr("id"), d = e("*[data-mltdropdown-id=" + _ + "]", ".mltt");
+d && d.length || (d = a.closest(".mltt__group").find(".mltt__leg")), d.addClass("is-loading"), e.ajax({
+url:"/hide_search_hist",
+method:"POST",
+data:{
+id:r,
+timeline:JSON.stringify(o(r))
+}
+}).done(function() {
+_i_("da5:e5024c34"), i.customGoal(n, 1), setTimeout(function() {
+_i_("da5:48ca7f3d"), location.reload(), _r_();
+}, 50), _r_();
+}).fail(function() {
+_i_("da5:2388e161"), d.removeClass("is-loading"), _r_();
+}), _r_();
+}), _r_();
+}), booking.trapFocus = function() {
+_i_("da5:f0e58ffa");
+var t, e, i = !1, n = null, a = null, o = [], r = [];
+function _(i, _, l) {
+if (_i_("da5:83792434"), !i && i instanceof Node) return console.log("You must provide target container where the focus to be trapped!"), _r_();
+t && d(l), t = i, n = _ || document.activeElement;
+var u = f(t);
+u.length && u[0].focus(), document.addEventListener("focus", c, !0), document.addEventListener("keydown", s, !0), document.addEventListener("keyup", s, !0), a = document.createElement("div"), a.setAttribute("tabindex", 0), a.addEventListener("focus", h, !0), t.appendChild(a), e = t.parentNode, e === document.body ? (o = document.querySelectorAll("body > *"), Array.prototype.forEach.call(o, function(e) {
+if (_i_("da5:66bca025"), e === t) return _r_();
+"true" == e.getAttribute("aria-hidden") ? r.push(e) :e.setAttribute("aria-hidden", !0), _r_();
+})) :B && B.env && B.env.b_dev_server && console.warn("trap-focus: The target element is not a direct descendant of body, therefore focus could not be trapped in it properly for screen readers! Consider appending target element to the body for better support!"), _r_();
+}
+function d(i) {
+if (_i_("da5:38afd117"), e === document.body && Array.prototype.forEach.call(o, function(e) {
+if (_i_("da5:32f221d6"), e === t) return _r_();
+-1 == r.indexOf(e) && e.removeAttribute("aria-hidden"), _r_();
+}), document.removeEventListener("focus", c, !0), document.removeEventListener("keydown", s, !0), document.removeEventListener("keyup", s, !0), i || n && n.focus(), n = null, t = null, a) {
+a.removeEventListener("focus", h, !0);
+var _ = a.parentNode;
+_ && _.removeChild(a), a = null;
+}
+e = null, _r_();
+}
+function s(t) {
+_i_("da5:cb87d9ce"), i = t.shiftKey, _r_();
+}
+function l() {
+_i_("da5:6533c779");
+var e = f(t);
+if (!e.length) return _r_();
+i ? e[e.length - 1].focus() :e[0].focus(), _r_();
+}
+function c(e) {
+_i_("da5:fe492bdb"), e.target instanceof Node && t.contains(e.target) || e.target && String(e.target.className || "").match(/\bforce-focusable\b/) || (e.preventDefault(), l()), _r_();
+}
+function h(t) {
+_i_("da5:2f542439"), t.preventDefault(), l(), _r_();
+}
+function f(t) {
+_i_("da5:25d669b6");
+var e = t.querySelectorAll("a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]");
+return _r_(Array.prototype.filter.call(e, function(t) {
+return _i_("da5:f737424e"), _r_(t.offsetWidth > 0 && t.offsetHeight > 0);
+}));
+}
+return _r_({
+trap:_,
+release:d
+});
+}(), B.define("trap-focus", booking.trapFocus), B.define("component/core/et-scroll-observer", function(t, e, i) {
+_i_("da5:4f898e5d");
+var n = B.eventEmitter, a = "et-scroll-observer:scroll";
+i.exports = t("component").extend({
+init:function() {
+_i_("da5:30d59e4c"), this.$el.on("mousewheel DOMMouseScroll scroll", this.handler), _r_();
+},
+handler:function(t) {
+_i_("da5:70b01956"), n.trigger(a, t), _r_();
+}
+}), _r_();
+}), B.define("sliding-panel-model", function(t, e, i) {
+_i_("da5:7f42b605");
+var n, a = t("event-emitter"), o = {}, r = {
+show:"sliding-panel/show",
+hide:"sliding-panel/hide",
+dataLoadStart:"sliding-panel/dataLoad:start",
+dataLoadAborted:"sliding-panel/dataLoad:abort",
+dataShown:"sliding-panel/dataShown",
+dataLoaded:"sliding-panel/dataLoad:success",
+dataLoadFail:"sliding-panel/dataLoad:fail",
+dataShowStart:"sliding-panel/showData:start",
+dataShowEnd:"sliding-panel/showData:success",
+ajaxInited:"sliding-panel/ajaxInited"
+};
+function _() {
+_i_("da5:a2c5d940"), this.isShown = 0, this.ajaxLoader = null, this.ajaxEnabled = !1, this.ajaxLoaded = !1, this.ajaxLoading = !1, this.ajaxLoadedUrl = "", this.dynamicData = {}, a.extend(this), _r_();
+}
+_.prototype.isPanelShown = function() {
+return _i_("da5:0ec51808"), _r_(this.isShown);
+}, _.prototype.hide = function() {
+_i_("da5:03dad44b"), this.isShown && (this.isShown = 0, this.emit(r.hide)), _r_();
+}, _.prototype.show = function() {
+if (_i_("da5:0171d1fe"), this.isShown) return _r_();
+this.isShown = 1, this.emit(r.show), _r_();
+}, _.prototype.ajaxLoad = function(t) {
+_i_("da5:94aa3b34"), this.ajaxLoadedUrl && this.ajaxLoadedUrl == t.url ? this.dynamicDataAborted() :this.ajaxLoader.load(t), _r_();
+}, _.prototype.beginLoading = function(t) {
+_i_("da5:34bd95f1"), this.ajaxLoading = !0, this.emit(r.dataLoadStart, t), _r_();
+}, _.prototype.dataLoaded = function(t, e) {
+_i_("da5:eecc4c28"), this.emit(r.dataLoaded, e), this.dynamicData = {
+content:t,
+requestParams:e
+}, this.setAjaxLoaded(e.url), this.showData(e), _r_();
+}, _.prototype.dataFailed = function(t) {
+_i_("da5:09d36cba"), this.emit(r.dataLoadFail, t), this.setAjaxLoaded(""), _r_();
+}, _.prototype.showData = function() {
+_i_("da5:6d775629"), this.emit(r.dataShowStart), _r_();
+}, _.prototype.isAjaxYetLoading = function() {
+return _i_("da5:251b3948"), _r_(this.ajaxLoading);
+}, _.prototype.getDynamicLoadedUrl = function() {
+return _i_("da5:076e7826"), _r_(this.ajaxLoadedUrl);
+}, _.prototype.setAjaxLoaded = function(t) {
+_i_("da5:b8f8198e"), this.ajaxLoadedUrl = t, this.ajaxLoading = !1, _r_();
+}, _.prototype.dynamicDataAborted = function() {
+_i_("da5:801eb086"), this.emit(r.dataLoadAborted), _r_();
+}, _.prototype.toggleAjaxEnabled = function(e) {
+if (_i_("da5:7fdf7313"), !e) return _r_();
+"on" == e && (this.ajaxEnabled = !0, this.ajaxLoader || (n = t("sliding-panel-ajax"), this.ajaxLoader = n.get(this.id), this.setDataPreprocessor(), this.emit(r.ajaxInited))), "off" == e && (this.ajaxEnabled = !1), _r_();
+}, _.prototype.getDynamicData = function() {
+return _i_("da5:2f4177ac"), _r_(this.dynamicData);
+}, _.prototype.setDataPreprocessor = function(t) {
+_i_("da5:876300ce"), t && (this.preprocessor = t), this.ajaxLoader && this.preprocessor && (this.ajaxLoader.preprocessData = this.preprocessor), _r_();
+}, i.exports = {
+EVENTS:r,
+get:function(t) {
+if (_i_("da5:55ad9802"), "string" != typeof t || 0 === t.length) throw new Error("sliding-panel-model: invalid .get() argument!");
+return o.hasOwnProperty(t) || (o[t] = new _(), o[t].id = t), _r_(o[t]);
+},
+hideAll:function() {
+_i_("da5:41b07915");
+for (var t in o) o[t].hide();
+_r_();
+}
+}, _r_();
+}), B.define("component/core/sliding-panel-core", function(t, e, i) {
+_i_("da5:cdc9a596");
+var n = t("jquery"), a = t("et"), o = t("server-data"), r = t("events"), _ = t("component"), d = t("sliding-panel-model"), s = "is-hidden", l = "is-shown", c = n(window), h = !0;
+i.exports = _.extend({
+init:function() {
+if (_i_("da5:682572ba"), this.id = this.$el.data("id"), "string" != typeof this.id) throw new Error("core/sliding-panel: `data-id` is invalid or undefined!");
+"undefined" == typeof this.useScrollBlocker && (this.useScrollBlocker = !0), this.$close = this.$el.find("[data-close-button]"), this.model = d.get(this.id), this.initHandlers(), _r_();
+},
+initHandlers:function() {
+_i_("da5:b941aad0"), this.useScrollBlocker && (this.scrollBlocker = t("page-scroll-block"), this.scrollBlocker.init()), this.model.on(d.EVENTS.show, this.show.bind(this)), this.model.on(d.EVENTS.hide, this.hide.bind(this)), this.model.on(d.EVENTS.dataShowStart, this.renderDynamicContent.bind(this)), this.model.on(d.EVENTS.dataLoadStart, this.showDynamicLoading.bind(this)), this.model.on(d.EVENTS.dataLoadFail, this.showDynamicFail.bind(this)), this.$el.on("click", this.onContainerClick.bind(this)), this.$el.on("click", "[data-content]", this.onContentClick.bind(this)), this.model.isPanelShown() && this.show(), _r_();
+},
+eventsOn:function() {
+_i_("da5:a4e9a349"), this.$close.on("click.slidingPanel", this.onCloseClick.bind(this)), c.on("keydown.slidingPanel", this.onKeyDown.bind(this)), _r_();
+},
+eventsOff:function() {
+_i_("da5:db8538fd"), this.$close.off("click.slidingPanel"), c.off("keydown.slidingPanel"), _r_();
+},
+onKeyDown:function(t) {
+_i_("da5:b6fb4416"), 27 === t.which && (this.model.hide(), this.onHideEvents("escape")), _r_();
+},
+onCloseClick:function() {
+_i_("da5:d96c9fb3"), this.model.hide(), this.onHideEvents("close-button"), _r_();
+},
+onOverlayClick:function() {
+_i_("da5:fc5e13dc"), this.model.hide(), this.onHideEvents("overlay"), _r_();
+},
+onHideEvents:function(t) {
+_i_("da5:8f92f4ce"), r.emit("sliding-panel/on:hide", t), r.emit("sliding-panel/" + this.id + "/on:hide", t), _r_();
+},
+onShowEvents:function() {
+_i_("da5:5e24804f"), r.emit("sliding-panel/on:show", this.id), r.emit("sliding-panel/" + this.id + "/on:show"), "tdot" === o.b_site_type && a.stage("VKZOFTOTdCIPPQFFZFeNBKKYcMEAVAPOSae", 1), _r_();
+},
+onDataShowEvents:function() {
+_i_("da5:0e9e83aa"), r.emit("sliding-panel/on:data_shown", this.id), r.emit("sliding-panel/" + this.id + "/on:data_shown"), _r_();
+},
+show:function() {
+_i_("da5:b743bedc"), this.$el.removeClass(s).addClass(l).show(), this.useScrollBlocker && this.scrollBlocker.freeze(), this.onShowEvents(), this.eventsOn(), _r_();
+},
+hide:function() {
+_i_("da5:3e1522e3");
+var t = this, e = this.$el;
+this.$el.removeClass(l).addClass(s), this.wait(400, function() {
+_i_("da5:16b8b910"), e.css("display", "none"), t.useScrollBlocker && t.scrollBlocker.unfreeze(), _r_();
+}), r.emit("sliding-panel/is-hidden", this.id), this.eventsOff(), _r_();
+},
+showDynamicLoading:function() {
+_i_("da5:61119b58"), this._setupDynamicElements(), this.$dynamicContainer.hide(), this.$dynamicLoadingBlock.show(), this.$dynamicFailBlock.hide(), _r_();
+},
+showDynamicFail:function() {
+_i_("da5:7c4103b0"), this.$dynamicContainer.hide(), this.$dynamicLoadingBlock.hide(), this.$dynamicFailBlock.show(), _r_();
+},
+showDynamicContainer:function() {
+_i_("da5:cfbdf103"), this.$dynamicContainer.show(), this.$dynamicLoadingBlock.hide(), this.$dynamicFailBlock.hide(), this.onDataShowEvents(), _r_();
+},
+_setupDynamicElements:function() {
+_i_("da5:46b91372"), (!this.$dynamicContainer || this.$dynamicContainer.length) && (this.$dynamicContainer = this.$el.find(".sliding-panel__ajax-container"), this.$dynamicLoadingBlock = this.$el.find(".sliding_panel__ajax_loading"), this.$dynamicFailBlock = this.$el.find(".sliding_panel__ajax_fail")), _r_();
+},
+renderDynamicContent:function() {
+_i_("da5:432d5428"), this._setupDynamicElements();
+var t = this.model.getDynamicData().content;
+this.$dynamicContainer.html(t), this.showDynamicContainer(), _r_();
+},
+onContainerClick:function() {
+_i_("da5:b90672b1"), h && (this.model.hide(), this.onHideEvents("overlay")), h = !0, _r_();
+},
+onContentClick:function() {
+_i_("da5:4909055c"), h = !1, _r_();
+},
+wait:function(t, e) {
+_i_("da5:efc4d038"), window.setTimeout(e, t), _r_();
+}
+}), _r_();
+}), B.define("component/core/sliding-panel-core-a11y", function(t, e, i) {
+_i_("da5:6b94c503");
+var n = t("component/core/sliding-panel-core"), a = t("trap-focus");
+i.exports = n.extend({
+show:function() {
+_i_("da5:167322d4"), n.prototype.show.apply(this, arguments);
+var t = this;
+t.$el.attr("tabindex", "0").attr("aria-hidden", "false"), n.prototype.wait.call(t, 400, function() {
+_i_("da5:0f64d7cd"), a.trap(t.el), _r_();
+}), setTimeout(function() {
+_i_("da5:6c649b92"), t.$el.find("*").blur(), _r_();
+}, 400), _r_();
+},
+hide:function() {
+_i_("da5:96d3a0b1"), n.prototype.hide.apply(this, arguments), this.$el.attr("tabindex", "-1").attr("aria-hidden", "true"), _r_();
+},
+eventsOn:function() {
+_i_("da5:e498ee4f"), n.prototype.eventsOn.apply(this), this.$close.on("keydown.slidingPanel", this.onEnterClose.bind(this)), _r_();
+},
+eventsOff:function() {
+_i_("da5:d0b668f3"), n.prototype.eventsOff.apply(this, arguments), this.$close.off("keydown.slidingPanel"), _r_();
+},
+onEnterClose:function(t) {
+_i_("da5:2d13d5d6");
+var e = t.which || t.keyCode;
+13 == e && this.$close.trigger("click"), _r_();
+}
+}), _r_();
+}), B.define("component/core/sliding-panel-trigger", function(t, e, i) {
+_i_("da5:04bce504");
+var n = t("component"), a = t("sliding-panel-model");
+i.exports = n.extend({
+init:function() {
+if (_i_("da5:8a6e368b"), this.target = this.$el.data("target"), this.panelTarget = this.$el.data("target"), "string" != typeof this.target) throw new Error("core/sliding-panel: `data-target` is invalid or undefined!");
+this.shouldToggle = this.$el.data("toggle") || !1, this.activeClass = this.$el.data("active-class") || "is-selected", this.preventDefault = "undefined" != typeof this.$el.data("prevent-default") ? this.$el.data("prevent-default") :!0, this.model = a.get(this.target), this._initAjaxOptions(), this._attachEvents(), _r_();
+},
+_attachEvents:function() {
+_i_("da5:cccbd21f"), this.shouldToggle ? this.$el.on("click", this.onClickToggle.bind(this)) :this.$el.on("click", this.onClick.bind(this)), this.model.on(a.EVENTS.hide, this.onSlidingHide.bind(this)), this.model.on(a.EVENTS.show, this.onSlidingShow.bind(this)), _r_();
+},
+onSlidingHide:function() {
+_i_("da5:0265ab35"), this.removeActiveClass(), _r_();
+},
+onSlidingShow:function() {
+_i_("da5:3d2b9573"), this.addActiveClass(), _r_();
+},
+onClick:function(t) {
+_i_("da5:8d320b32"), this.preventDefault && t.preventDefault(), this.model.show(), this.addActiveClass(), this.target = $(t.target).is("a") ? $(t.target) :$(t.target).closest("a"), this.ajaxURL && this.model.ajaxLoad(this.ajaxOptions), _r_();
+},
+onClickToggle:function(t) {
+_i_("da5:110fc8c6"), this.preventDefault && t.preventDefault(), this.target = $(t.target).is("a") ? $(t.target) :$(t.target).closest("a"), this.model.isPanelShown() ? (this.model.hide(), this.removeActiveClass()) :(this.model.show(), this.addActiveClass(), this.ajaxURL && this.model.ajaxLoad(this.ajaxOptions)), _r_();
+},
+removeActiveClass:function() {
+_i_("da5:245b5fdf"), this.$el.removeClass(this.activeClass);
+var t = this;
+setTimeout(function() {
+_i_("da5:e2dafa4f"), t.target && t.target.focus && t.target.focus(), _r_();
+}, 500), _r_();
+},
+addActiveClass:function() {
+_i_("da5:28970c2f"), this.$el.addClass(this.activeClass), _r_();
+},
+_initAjaxOptions:function() {
+_i_("da5:1f88b505"), this.$el.data("ajaxUrl") && (this.ajaxURL = this.$el.data("ajaxUrl"), this.ajaxOptions = {
+url:this.$el.data("ajaxUrl") + "?" + this.$el.data("ajaxParams"),
+ajaxTmpl:this.$el.data("ajaxTmpl")
+}, this.model.toggleAjaxEnabled("on")), _r_();
+}
+}), _r_();
+}), B.define("page-scroll-block", function(t, e, i) {
+"use strict";
+_i_("da5:3719abcc");
+var n, a = t("jquery"), o = a(window), r = document.body, _ = !1;
+function d() {
+if (_i_("da5:3e819b91"), "undefined" != typeof n) return _r_(n);
+return _r_(this.scrollWidth = n = c());
+}
+function s() {
+if (_i_("da5:3681b6a2"), r.style.overflow = "hidden", !n) return _r_();
+h() && (r.style.paddingRight = n + "px"), f(!0), _r_();
+}
+function l() {
+if (_i_("da5:6fd90216"), r.style.overflow = "", !n) return _r_();
+r.style.paddingRight = "", f(!1), _r_();
+}
+function c() {
+_i_("da5:329c670f");
+var t, e = document.createElement("div");
+return e.setAttribute("style", [ "width: 100px", "height: 100px", "overflow: scroll", "position: absolute", "top: -9999px" ].join(";")), r.appendChild(e), t = e.offsetWidth - e.clientWidth, r.removeChild(e), _r_(t);
+}
+function h() {
+return _i_("da5:02e1130a"), _r_(r.scrollHeight > document.documentElement.clientHeight);
+}
+function f(t) {
+_i_("da5:1f55eb15"), t ? o.on("resize.pageScrollBlock", u) :o.off("resize.pageScrollBlock"), _r_();
+}
+function u() {
+if (_i_("da5:6ef37904"), _) return _r_();
+h() ? r.style.paddingRight = n + "px" :r.style.paddingRight = "", _ = !0, window.setTimeout(function() {
+_i_("da5:3be8fe9e"), _ = !1, _r_();
+}, 150), _r_();
+}
+e.init = d, e.freeze = s, e.unfreeze = l, e.getScrollWidth = function() {
+return _i_("da5:3ea28370"), _r_(this.scrollWidth);
+}, _r_();
+}), booking.env.enable_scripts_tracking && (booking.env.scripts_tracking.mlt.run = !0);

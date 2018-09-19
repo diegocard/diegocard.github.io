@@ -1,0 +1,668 @@
+var _i_ = this._i_ || function() {}, _r_ = this._r_ || function(t) {
+return t;
+};
+
+!function() {
+_i_("a9a:4eeb41fc"), B.define("hotel/utils/rooms-selected-copy", function(t) {
+return _i_("a9a:be6dbbf5"), _r_(function(t, e) {
+_i_("a9a:9863e5ee");
+var o, a, n = "<strong>" + e + "</strong>";
+switch (o = t.length > 1 ? "0" :t[0] || "0") {
+case "29":
+a = "hp_book_now_summary_holidayhomes";
+break;
+
+case "31":
+a = "hp_book_now_summary_villas";
+break;
+
+case "1":
+a = "hp_book_now_summary_apartments";
+break;
+
+case "17":
+a = "hp_book_now_summary_chalet";
+break;
+
+case "19":
+a = "hp_book_now_summary_bungalow";
+break;
+
+case "26":
+a = "hp_book_now_summary_dorm_beds";
+}
+return _r_(a ? B.jstmpl.translations(a, e, {
+b_count:n
+}) :B.jstmpl.translations("hp_book_now_summary_room", e, {
+number_rooms:n
+}));
+});
+}), B.define("component/hotel/new-rooms-table/cheapest-seen-block", function(t, e, o) {
+_i_("a9a:d6f46ef2");
+var a = t("jquery"), n = t("component"), r = B.require("search-config"), i = t("et"), _ = t("events"), s = B.hotel.Events.RT.CHEAPEST_SEEN_BLOCK_AFTER_SHOW;
+function l(t, e) {
+if (_i_("a9a:a9710248"), r.isGroupSearch) return _r_();
+var o = [ B.env.b_ufi, B.env.b_checkin_date, B.env.b_checkout_date, +r.adults ].join("_"), n = {
+method:"GET",
+dataType:"json",
+url:"/is_cheapest",
+data:{
+hotel_id:B.env.b_hotel_id,
+search_key:o
+}
+};
+a.ajax(n).done(function(e) {
+_i_("a9a:6329ef7d");
+var o, a = !0;
+e.b_first && (B.et.stage("BKPBAENYScXQOVZGRAaeNBTAHYUNHFTYHWdSLMO", 1), 2 === B.et.track("BKPBAENYScXQOVZGRAaeNBTAHYUNHFTYHWdSLMO") && (a = !1)), a && e.is_the_cheapest ? (o = t.closest("tr").prev(), o.find(".hprt-table-cell-price").addClass("hprt-table-cheapest-block-arrow"), t.addClass("hprt-table-cheapest-block-banner-active"), t.closest("tr.js-hprt-cheapest-block-row").addClass("hprt-cheapest-block-row-active"), o.is(".js-hprt-table-cheapest-block") && o.addClass("hprt-table-cheapest-block-active"), i.track("PPXGDSJMWRbHJQPYHNOSBAC") && _.emit(s, t)) :(o = t.closest("tr").prev(), o.find(".hprt-table-cell-price").removeClass("hprt-table-cheapest-block-arrow"), t.removeClass("hprt-table-cheapest-block-banner-active"), t.closest("tr.js-hprt-cheapest-block-row").removeClass("hprt-cheapest-block-row-active"), o.is(".js-hprt-table-cheapest-block") && o.removeClass("hprt-table-cheapest-block-active")), _r_();
+}), _r_();
+}
+o.exports = n.extend({
+init:function() {
+_i_("a9a:53f49709");
+var t = this.$el;
+l(t), a(window).bind("focus", function() {
+_i_("a9a:fb03e730"), l(t), _r_();
+}), _r_();
+}
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/room-upgrade-for-genius-block", function(t, e, o) {
+_i_("a9a:80e13554");
+var a = t("component");
+function n(t) {
+_i_("a9a:0cec8fd3");
+var e;
+e = t.closest("tr").prev(), e.find(".hprt-table-cell-price").addClass("hprt-table-cheapest-block-arrow"), e.find(".hprt-table-cell").not($(".hprt-table-cell-roomtype")).addClass("hprt-remove-top-border"), e.hasClass("hprt-table-last-row") && t.addClass("rm-upgrd-block-border"), _r_();
+}
+o.exports = a.extend({
+init:function() {
+_i_("a9a:f2ca0def");
+var t = this.$el;
+n(t), t.closest("tr").prev().removeClass("hprt-table-cheapest-block"), t.closest("tr").prev().find(".hprt-table-cell-roomtype.-first").not($(".-last")).removeClass("droom_seperator"), $(".room-upgrade-row").find("td").removeClass("droom_seperator");
+var e = $(".room-upgrade-row");
+e.next().hasClass("js-hprt-room-upgrade-block-row") && e.find("td").css("border-bottom", "0"), _r_();
+}
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/lightbox", function(t, e, o) {
+_i_("a9a:f9e35468");
+var a = t("component"), n = t("et"), r = t("jquery"), i = t("lightbox"), _ = t("events"), s = B.require("ga-tracker"), l = t("hotel/rooms_table/lightbox/gallery"), c = {}, h = 0, d = !1, b = !1, p = !1, f = !1;
+function m(t) {
+_i_("a9a:1761391a");
+var e = "hprt-table-cell-roomtype--highlight";
+t.addClass(e), setTimeout(function() {
+_i_("a9a:7604d58c"), t.removeClass(e), _r_();
+}, 500), _r_();
+}
+function u(t) {
+_i_("a9a:bf855915");
+var e = "roomType--highlight hprt-table-cell-roomtype--active";
+r(".hprt-table").find(".hprt-table-cell.-first").removeClass(e), t.addClass(e), _r_();
+}
+function g(t) {
+if (_i_("a9a:fdaa627b"), (!b || !p || !f) && t.data("room-id")) {
+var e = "RD" + t.data("room-id");
+c[e] ? c[e] += 1 :(c[e] = 1, h += 1, b || (n.goal("hp_rt_roomtype_lightbox_opened"), b = !0)), !p && c[e] > 1 && (n.goal("hp_lightbox_opened_more_than_once"), p = !0), !f && h > 1 && (n.goal("hp_lightbox_opened_for_different_rooms"), f = !0);
+}
+_r_();
+}
+function v(t) {
+return _i_("a9a:c8c5a058"), _r_(function() {
+_i_("a9a:c3814b3f");
+var e = t.data("room-id"), o = r("[name=RD" + e + "]").parents(".hprt-table-cell").first();
+if (!B.feature || !B.feature.transition || !B.env.b_has_maxotel_rooms) return _r_();
+if (!o.length) return _r_();
+m(o), u(o);
+var a = t.data("LightboxGallery");
+a && a.pauseSlick && a.pauseSlick();
+var n = "Click on close button";
+s.trackEvent(s.hotelPageTracker, "Hotel: Lightbox closed", n), _r_();
+});
+}
+function k(t, e) {
+_i_("a9a:ba0bd60b");
+var o = t.data("room-id"), a = "hprt-lightbox--wrapper";
+if (a += " hprt-lightbox--two_column_layout", B.env.b_is_vacation_rental && B.env.b_is_single_unit_vr && r(".bh-photo-grid-photo1").hasClass("bh-photo-grid-photo1") && B.et.stage("NAFQTPeVYYPTdMdfYMO", 1), B.env.b_is_vacation_rental && B.env.b_is_single_unit_vr && r(".bh-photo-grid-photo1").hasClass("bh-photo-grid-photo1") && B.et.track("NAFQTPeVYYPTdMdfYMO")) return setTimeout(function() {
+_i_("a9a:63078553"), r(".bh-photo-grid-photo1").addClass("hprt-lightbox").trigger("click"), _r_();
+}, 1), r(".unit-lightbox-sidebar-container").addClass("opened"), r(".bh-photo-modal").css("margin-left", r(".unit-lightbox-sidebar-container").css("width")), _r_();
+var c = {
+customWrapperClassName:a,
+bOverflowVisible:!0,
+position:"dynamic",
+hideCallBack:v(t),
+trapFocus:!0
+};
+i.show(t, c);
+var h = t.find(".hprt-lightbox-gallery-container");
+if (h.length && !h.hasClass("slicked")) {
+h.addClass("slicked");
+var b = new l(h);
+t.data("LightboxGallery", b);
+var p = h.find('[data-gallery=""]');
+p.one("click.tracking", function() {
+_i_("a9a:92bf8b2f"), n.goal("hp_lb_gallery_clicks_photo"), _r_();
+});
+var f = h.find(".hp-gallery-control");
+f.on("click.tracking", function(t) {
+_i_("a9a:a6deb18a"), t.hasOwnProperty("originalEvent") && (B.et.goal("hp_lb_gallery_clicks_arrows"), f.off("click.tracking")), _r_();
+});
+var m = h.find("a.hotel_thumbs_sprite");
+m.one("mouseenter.tracking click.tracking", function() {
+_i_("a9a:a1138f74"), B.et.goal("hp_lb_gallery_used_thumbs"), _r_();
+}), g(t);
+} else {
+var b = t.data("LightboxGallery");
+b && b.playSlick && b.playSlick(), h.length && g(t);
+}
+var u = t.find(".inline-feedback_lightbox");
+if (u.length) {
+var k = t.find(".b-button_primary").length > 0, C = parseInt(u.data("opened_count"));
+C ? C += 1 :C = 1, u.data("opened_count", C), (C > 2 || !k) && u.removeClass("g-hidden");
+}
+if (_.off("feedbackInline:close_lightbox").on("feedbackInline:close_lightbox", y), "1" == B.env.b_has_valid_dates_not_in_past && B.env.fe_has_3d_model_gallery) {
+var x = "ZdffZZGbEILJOIFHVHYQDYEaNdNC";
+t.find(".t-" + x).length && (B.et.stage(x, 2), B.et.stage(x, 3), B.env.fps_avg && B.env.fps_avg < 20 && B.et.stage(x, 8));
+}
+var w = "ZdfbAZQTZOUdTDIDFKVBbFWDdQEYT";
+t.find(".t1-" + w).length && (B.et.stage(w, 2), B.et.stage(w, 3));
+var j = "ZdfbAZQTZOUdTDIDFKVBbFFcFBO";
+t.find(".t-" + j).length && (B.et.stage(j, 2), B.et.stage(j, 3), ("gold" == B.env.fe_hotel_account_flag || "silver" == B.env.fe_hotel_account_flag) && B.et.stage(j, 5), ("bronze" == B.env.fe_hotel_account_flag || "copper" == B.env.fe_hotel_account_flag) && B.et.stage(j, 6));
+var T = "ZdfbFUdJVTeSdZAeKe";
+t.find(".t-" + T).length && (B.et.stage(T, 1), B.et.stage(T, 3));
+var $ = "ZdffCfQXRaeZXaIRdNFLFHAfEMO";
+t.find(".t-" + $).length && (B.et.stage($, 1), B.et.stage($, 2), t.find(".t1-" + $).length ? B.et.stage($, 4) :t.find(".t2-" + $).length && B.et.stage($, 5)), _.trigger(B.hotel.Events.RT.LIGHTBOX_OPEN_NEW, o, t);
+var M = r('a.hprt-roomtype-link[href="#RD' + o + '"]');
+if (M.length > 0) {
+var D = M.data("room-name");
+D && s.trackEvent(s.hotelPageTracker, "Hotel: Lightbox opened", D);
+}
+d || isNaN(o) || !n.track("ZdffUWRDSFKGaRIHeZeZFZVET") || (d = !0, r.ajax({
+method:"POST",
+dataType:"json",
+url:"/hotel_lightbox_opened",
+data:{
+hotel_id:B.env.b_hotel_id,
+room_id:o
+}
+})), _r_();
+}
+function y() {
+_i_("a9a:4fb8ca4d"), i.hide(), _r_();
+}
+o.exports = a.extend({
+init:function(t) {
+_i_("a9a:4fe03176");
+var e = this.$el, o = e.data("room-id"), a = r('.hprt-roomtype-link[data-room-id="' + o + '"]');
+if (!a.length) return _r_();
+a.click(function(t) {
+_i_("a9a:ee950b8a"), t.preventDefault(), k(e, !1), _r_();
+});
+var n = r(".gr-toggle-room-lightbox");
+if (n.length) for (var i = 0; i < n.length; i++) a.attr("href") === r(n[i]).attr("href") && r(n[i]).bind("click", function(t) {
+_i_("a9a:101167a6"), t.preventDefault(), B.env.b_is_vacation_rental && B.env.b_is_single_unit_vr && B.et.track("NAFQTPeVYYPTdMdfYMO") ? r('.hprt-roomtype-link[data-room-id="' + o + '"]').trigger("click") :k(e, !0), _r_();
+});
+var _ = r(".main-gallery-toggle-room-lightbox");
+if (_.length) for (var i = 0; i < _.length; i++) a.data("roomId") === r(_[i]).data("roomId") && r(_[i]).bind("click", function(t) {
+_i_("a9a:7d6ceceb"), t.preventDefault(), k(e, r(this).data("isGroupRecommendation")), _r_();
+});
+var s = "ZdffZZGbEILJOIFHVHYQDYEaNdNC";
+if ("1" == B.env.b_has_valid_dates_not_in_past && B.env.fe_has_3d_model_gallery && B.et.track(s)) {
+var l = r(".js-photo-grid-interactive-tour");
+if (l.length) for (var i = 0; i < l.length; i++) a.data("roomId") === r(l[i]).data("roomId") && r(l[i]).bind("click", function(t) {
+_i_("a9a:80e084fd"), t.preventDefault(), k(e, r(this).data("isGroupRecommendation")), _r_();
+});
+}
+_r_();
+},
+show:k
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/summary/best-price", function(t, e, o) {
+_i_("a9a:dcaa2e92");
+var a = t("component"), n = t("hotel/store"), r = t("jstmpl");
+o.exports = a.extend({
+init:function() {
+_i_("a9a:1784929d"), n.subscribe(function() {
+_i_("a9a:c8b3d25e");
+var t = n.getState().roomsTable.js_selection, e = $(".hp_rt_attr_msg");
+1 == B.env.b_is_group_search ? 2 == t.fitStatus ? this.toggleJackpotMessage(t, e) :this.$el.hide() :this.toggleJackpotMessage(t, e), _r_();
+}.bind(this)), _r_();
+},
+toggleJackpotMessage:function(t, e) {
+if (_i_("a9a:9ab99242"), 1 == t.roomCount && 2 == t.blocks[t.blockIDs[0]].b_stay_prices.length) {
+var o = "", a = t.roomTypes[0], n = [ "1", "29", "31", "17", "19", "26" ], i = -1 !== n.indexOf(a);
+i ? (o = "1" === a ? r.translations("pss_rt_jackpot_last_room_dehotelise_apt") :"29" === a ? r.translations("pss_rt_jackpot_last_room_dehotelise_hh") :"31" === a ? r.translations("pss_rt_jackpot_last_room_dehotelise_villa") :r.translations("pss_rt_jackpot_last_room_dehotelise_option"), this.$el.text(o)) :this.$el.text(B.jstmpl.translations("hp_rt_jackpot_last_room")), this.$el.show(), e.length && e.show();
+} else t.roomCount > 0 ? (this.$el.text(B.jstmpl.translations("hp_rt_jackpot_best_price")), this.$el.show(), e.length && e.show()) :(this.$el.hide(), this.$el.text(""), e.length && e.hide());
+_r_();
+}
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/summary/breakfast-included", function(t, e, o) {
+_i_("a9a:b5cd9c4d");
+var a = t("component"), n = t("hotel/store");
+o.exports = a.extend({
+init:function() {
+_i_("a9a:2ae1bbf5"), n.subscribe(function() {
+_i_("a9a:6a73f9b8");
+var t = n.getState().roomsTable.js_selection;
+if (t.roomCount > 0) {
+var e = t.blockIDs.every(function(e) {
+return _i_("a9a:f24b1574"), _r_("breakfast" === t.blocks[e].b_mealplan_included_name);
+});
+e ? this.$el.show() :this.$el.hide();
+} else this.$el.hide();
+_r_();
+}.bind(this)), _r_();
+}
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/summary/no-free-cancellation", function(t, e, o) {
+_i_("a9a:52a73b5f");
+var a = t("component"), n = t("hotel/store");
+o.exports = a.extend({
+init:function() {
+_i_("a9a:33789c75"), n.subscribe(function() {
+_i_("a9a:4516fa33");
+var t = n.getState().roomsTable.js_selection, e = t.blockIDs.reduce(function(e, o) {
+return _i_("a9a:30295c20"), _r_("non_refundable" === t.blocks[o].b_cancellation_type ? e + 1 :e);
+}, 0);
+e > 0 ? (1 === t.roomCount ? this.$el.html(B.jstmpl.translations("sxp_hp_rt_no_free_cancellation_1")) :t.blockIDs.length - e !== 0 ? this.$el.html(B.jstmpl.translations("sxp_hp_rt_no_free_cancellation_3")) :this.$el.html(B.jstmpl.translations("sxp_hp_rt_no_free_cancellation_4")), $(".continue_header").removeClass("g-hidden"), this.$el.removeClass("g-hidden")) :($(".continue_header").addClass("g-hidden"), this.$el.addClass("g-hidden")), _r_();
+}.bind(this)), _r_();
+}
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/summary/conditions", function(t, e, o) {
+_i_("a9a:a7c2703d");
+var a = t("component"), n = t("hotel/store");
+o.exports = a.extend({
+init:function() {
+_i_("a9a:c49c9bf3"), n.subscribe(function() {
+_i_("a9a:4708fb7a");
+var t = n.getState().roomsTable.js_selection;
+if (1 !== t.roomCount || t.blocks[t.blockIDs[0]].b_is_fflex_price_point) this.$el.html(""); else {
+var e = $('tr[data-block-id="' + t.blockIDs[0] + '"]').find(".hprt-conditions").clone();
+e.removeClass("hprt-conditions").addClass("hprt-conditions-summary"), e.find(".jq_tooltip").removeClass("jq_tooltip").removeAttr("data-title title"), e.find(".green_condition").removeClass("green_condition"), e.find(".hprt-green-condition").removeClass("hprt-green-condition"), e.find(".hprt-checkmark-condition").removeClass("hprt-checkmark-condition"), e.find(".hprt-special-condition").removeClass("hprt-special-condition"), t.blocks[t.blockIDs[0]].b_genius_free_room_upgrade && e.find(".room-upgrade-condition").css("display", "list-item"), this.$el.html("<div><strong>" + B.jstmpl.translations("bp_res_column_details") + "</strong>" + $("<div />").append(e).html() + "</div>");
+}
+_r_();
+}.bind(this)), _r_();
+}
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/summary/cta-ticker", function(t, e, o) {
+_i_("a9a:204b61a9");
+var a = t("component"), n = t("jquery");
+o.exports = a.extend({
+init:function() {
+_i_("a9a:69a749bc");
+var t = this.$el.find("span"), e = 0;
+setInterval(function() {
+_i_("a9a:2a47cb69"), n(t.get(e)).fadeOut("slow", function() {
+_i_("a9a:417af38a"), e += 1, e == t.length && (e = 0), n(t.get(e)).fadeIn("slow"), _r_();
+}), _r_();
+}, 7e3), _r_();
+}
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/reservation-cta", function(t, e, o) {
+_i_("a9a:cf06c7a8");
+var a = t("component"), n = t("et"), r = t("hotel/store");
+o.exports = a.extend({
+init:function() {
+_i_("a9a:2912165b");
+var t = this.$el.find(".js-reservation-button");
+t.on("mouseenter", function() {
+_i_("a9a:f5951fa4"), r.getState().roomsTable.js_selection.roomCount || (n.stage("ABbDSFLFdBfKAaOMBO", 1), n.track("ABbDSFLFdBfKAaOMBO") && $(".hprt-table-cell.hprt-table-room-select").addClass("hprt-block--column-highlighted")), _r_();
+}), t.on("mouseleave", function() {
+_i_("a9a:acb7b161"), n.track("ABbDSFLFdBfKAaOMBO") && $(".hprt-table-cell.hprt-table-room-select").removeClass("hprt-block--column-highlighted"), _r_();
+}), r.subscribe(function() {
+_i_("a9a:6fcfe65b");
+var e = r.getState().roomsTable.js_selection, o = e.blockIDs.some(function(t) {
+return _i_("a9a:3c30249e"), _r_(e.blocks[t].b_rate_is_genius);
+}), a = e.blockIDs.filter(function(t) {
+return _i_("a9a:e976fc2e"), _r_(e.blocks[t].b_genius_free_room_upgrade);
+}), i = e.blockIDs.some(function(t) {
+return _i_("a9a:261befd3"), _r_(e.blocks[t].b_business_package_match);
+});
+i && n.customGoal("VOffSLNULFHOHRCTeMeRGWLEcLcDOJaYO", 2);
+var _ = e.blockIDs.some(function(t) {
+return _i_("a9a:bd0710a9"), _r_(e.blocks[t].b_rate_is_cug_business_rate);
+});
+_ && e.blockIDs.length < 2 && (o = !1), a.length && a.length === e.blockIDs.length ? t.html(B.jstmpl.translations("genius_free_room_upgrade_rt_cta")) :o ? t.html(B.jstmpl.translations("ge_deepen_rt_book_genius_cta")) :t.html(B.jstmpl.translations("hp_rt_book_button_reserve")), n.track("ABbDSFLFdBfKAaOMBO") && t.toggleClass("b-button_disabled_on_hover", !e.roomCount > 0), _r_();
+}.bind(this)), _r_();
+}
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/summary/dont-worry", function(t, e, o) {
+_i_("a9a:56755e0d");
+var a = t("component");
+o.exports = a.extend({
+init:function() {
+if (_i_("a9a:9aa1ad13"), this.$el.data("alwaysVisible")) return this.$el.text(B.jstmpl.translations("bp_dont_worry_message")), _r_();
+var e = t("hotel/store");
+e.subscribe(function() {
+_i_("a9a:d8ae6c1c");
+var t = e.getState().roomsTable.js_selection, o = t.blockIDs.every(function(e) {
+return _i_("a9a:407283ae"), _r_(t.blocks[e].b_book_now_pay_later);
+});
+t.roomCount > 0 && o ? this.$el.text(B.jstmpl.translations("bp_dont_worry_message")) :this.$el.text(""), _r_();
+}.bind(this)), _r_();
+}
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/summary/genius-challenge", function(t, e, o) {
+_i_("a9a:724a462a");
+var a = t("component"), n = t("hotel/store");
+o.exports = a.extend({
+init:function() {
+_i_("a9a:eb691259"), n.subscribe(function() {
+_i_("a9a:b41696e8");
+var t = n.getState().roomsTable.js_selection;
+t.roomCount ? this.$el.show() :this.$el.hide(), _r_();
+}.bind(this)), _r_();
+}
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/summary/fade", function(t, e, o) {
+_i_("a9a:7c117af1");
+var a = t("jquery"), n = t("component"), r = t("hotel/store"), i = "hprt-block--room-selected", _ = "roomType--highlight hprt-table-cell-roomtype--active";
+o.exports = n.extend({
+init:function() {
+_i_("a9a:b0213c89"), r.subscribe(function() {
+_i_("a9a:eb212308");
+var t = r.getState().roomsTable.js_selection;
+this.$el.removeClass(i), t.roomCount > 0 && this.$el.addClass(i);
+var e = ".roomType--highlight", o = a(".hprt-table").find(".hprt-table-cell.-first");
+if (o.length && o.filter(e).length) {
+var n = o.filter(e).find("[name^=RD]");
+if (n && n.length && t.roomIDs && t.roomIDs.length) {
+var s = n.attr("name").replace("RD", "");
+s && -1 == t.roomIDs.indexOf(s) && o.removeClass(_);
+}
+}
+_r_();
+}.bind(this)), _r_();
+}
+}), _r_();
+}), booking.jstmpl("template_reserve_button_tooltip", function() {
+_i_("a9a:df47d087");
+var t, e = [ "\n    <div class='big_tooltip_x'>\n        <h1>", "</h1>\n\n        <p>\n            <strong>\n                ", "\n                    ", ", ", "\n                ", "\n            </strong>\n            <br />\n        </p>\n\n        <hr/>\n\n        <p>\n            <strong>", "/private/bp_dates_num_nights_1/name", "</strong><br />\n        </p>\n\n        <p>\n            ", "/private/check_in/name", ": </span>", "\n        </p>\n\n        <p>\n            ", "/private/check_out/name", "\n        </p>\n    </div>\n\n    <div class='big_tooltip_message'>\n        ", "\n          ", "/private/genius_free_room_upgrade_rt_applied/name", "\n        ", "\n            ", "/private/ge_boost_hp_rt_reserve_button_hover_nongenius/name", "/private/hp_rt_reserve_hover_no_account_2_minutes/name", "\n    </div>\n\n    ", '\n            <div class="big_tooltip_message big_tooltip_message__green pay_later">\n                ', "/private/hp_rt_pay_at_property/name", "\n            </div>\n        ", "\n    ", "\n\n" ], o = [ "b_hotel_name", "b_room_details", "b_name", "b_interval", "b_checkin_localized_date_with_weekday", "b_checkout_localized_date_with_weekday", "b_only_genius_room_upgrade_selected", "b_user_auth_level", "b_all_rooms_have_pay_later", "b_is_lightbox" ];
+return _r_(function(a) {
+_i_("a9a:f6a6c7ca");
+var n = "", r = this.fn;
+n += [ e[0], r.F.html(r.MC(o[0])), e[1] ].join("");
+var i = r.MC(o[1]) || [];
+a.unshift(null);
+for (var _ = 1, s = i.length; s >= _; _++) a[0] = i[_ - 1], n += [ e[2], r.F.html(r.MC(o[2])) ].join(""), r.MJ(_ == i.length) || (n += e[3]), n += e[4];
+return a.shift(), n += [ e[5], (a.unshift({
+num_nights:r.MC(o[3])
+}), t = r.ME(e[6], r.MB, r.MN, r.MO(r.MC(o[3]), null, e[6])), a.shift(), t), e[7], r.ME(e[8], r.MB, r.MN, null), e[9], r.MC(o[4]), e[10], r.ME(e[11], r.MB, r.MN, null), e[9], r.MC(o[5]), e[12] ].join(""), n += r.MD(o[6]) ? [ e[13], r.ME(e[14], r.MB, r.MN, null), e[15] ].join("") :r.MD(o[7]) ? [ e[16], r.ME(e[17], r.MB, r.MN, null), e[15] ].join("") :[ e[16], r.ME(e[18], r.MB, r.MN, null), e[15] ].join(""), n += e[19], r.MK(r.MC(o[9])) && (n += e[15], r.MD(o[8]) && (n += [ e[20], r.ME(e[21], r.MB, r.MN, null), e[22] ].join("")), n += e[23]), n += e[24], _r_(n);
+});
+}()), B.define("hotel/rooms-table/reserve-button-tooltip", function(t) {
+_i_("a9a:d1b23c86");
+var e, o, a = t("jquery"), n = t("hotel/store"), r = a(".js-reservation-button"), i = B.env.fe_unified_tooltip ? r.attr("data-tooltip-text") :r.attr("data-title"), _ = B.jstmpl("template_reserve_button_tooltip"), s = {};
+function l(t, n) {
+_i_("a9a:1446d870"), r.each(function() {
+_i_("a9a:ca6ec3fe");
+var r = a(this);
+e = e || r.component("tooltip").tooltip, o = o || e.$tooltip, e.settings.text = t, r.component("tooltip").tooltip.settings.text = t, n ? (e.settings.customClass = "submit_holder_button_tooltip", o && o.addClass("submit_holder_button_tooltip").find(".tltp__body").html(t), r.attr("data-tooltip-text", t).attr("data-tooltip-class", "submit_holder_button_tooltip")) :(e.settings.customClass = "", o && o.removeClass("submit_holder_button_tooltip").find(".tltp__body").html(t), r.attr("data-tooltip-text", t).attr("data-tooltip-class", "")), _r_();
+}), _r_();
+}
+n.subscribe(function() {
+_i_("a9a:86fb6b35");
+var t = n.getState().roomsTable.js_selection, e = t.roomIDs.map(function(e) {
+return _i_("a9a:ac8eb076"), _r_(t.rooms[e]);
+}), o = t.blockIDs.filter(function(e) {
+return _i_("a9a:d56c8c4a"), _r_(t.blocks[e].b_genius_free_room_upgrade);
+}), a = o.length && o.length === t.blockIDs.length;
+if (r.removeAttr("id").removeAttr("data-tooltip-class"), t.roomCount > 0) {
+s = {
+b_hotel_name:B.env.b_hotel_name,
+b_interval:B.env.b_checkin_checkout_interval,
+b_checkin_localized_date_with_weekday:B.formatter.date(B.env.b_checkin_date, "date_with_weekday"),
+b_checkout_localized_date_with_weekday:B.formatter.date(B.env.b_checkout_date, "date_with_weekday"),
+b_check_in_time_translated:B.env.b_check_in_time_translated,
+b_check_out_time_translated:B.env.b_check_out_time_translated,
+b_room_details:e,
+b_user_auth_level:B.env.auth_level,
+b_only_genius_room_upgrade_selected:a
+};
+var c = _.render(s);
+B.env.fe_unified_tooltip ? l(c, !0) :r.attr("data-title", c).attr("data-tooltip-class", "submit_holder_button_tooltip");
+} else s = {}, B.env.fe_unified_tooltip ? l(i, !1) :r.attr("data-title", i);
+_r_();
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/summary/rooms", function(t, e, o) {
+_i_("a9a:c8f42e99");
+var a = t("component"), n = t("hotel/utils/rooms-selected-copy"), r = t("hotel/store");
+o.exports = a.extend({
+init:function() {
+_i_("a9a:86d028d5"), r.subscribe(function() {
+_i_("a9a:39ad99ac");
+var t = r.getState().roomsTable.js_selection;
+t.roomCount > 0 ? (this.$el.html(n(t.roomTypes, t.roomCount) + ' <div class="hprt-reservation-total-price">' + t.totalPriceFormatted + "</div>"), this.$el.show()) :this.$el.hide(), _r_();
+}.bind(this)), _r_();
+}
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/highlighted-facilities", function(t, e, o) {
+_i_("a9a:fb65a6e3");
+var a = t("component"), n = t("et"), r = t("events");
+o.exports = a.extend({
+init:function() {
+_i_("a9a:c0bc5b9e"), this.$otherFacilities = this.$el.find(".hprt-facilities-others"), this.$accessibleFacilities = this.$el.find(".hprt-accessible-facilities"), this.addEventListeners(), _r_();
+},
+addEventListeners:function() {
+_i_("a9a:86daa392");
+var t = this.$otherFacilities, e = this.$accessibleFacilities;
+this.$el.on("click", "[data-toggler]", function(e) {
+_i_("a9a:917cb5e9"), e.preventDefault();
+var o = $(e.target);
+t.toggle("fast", function() {
+_i_("a9a:5735016a"), t.is(":visible") ? (n.goal("hp_room_facilities_more"), o.text(B.jstmpl.translations("hp_rt_info_collapse")), n.track("AENNQASJXOTdJNQHT") && r.emit("hp_rt.more_facilities")) :(n.goal("hp_room_facilities_less"), o.text(B.jstmpl.translations("hp_rt_loc_more")), n.track("AENNQASJXOTdJNQHT") && r.emit("hp_rt.more_facilities")), _r_();
+}), _r_();
+}), this.$el.on("click", "[data-toggler-accessibility]", function(t) {
+_i_("a9a:a210caab"), t.preventDefault(), $(t.currentTarget).toggleClass("accordion-open", !e.is(":visible")), e.toggle("fast"), $(t.currentTarget).blur(), _r_();
+}), _r_();
+}
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/select-error-tooltip", function(t, e, o) {
+_i_("a9a:acae9003");
+var a = t("component"), n = t("jquery"), r = t("hotel/store"), i = t("hotel/redux/actionTypes");
+o.exports = a.extend({
+init:function() {
+_i_("a9a:6270e865");
+var t = this.$el, e = n(".hprt-nos-select");
+t.attr("role", "alert"), n("#hprt-form").submit(function(o) {
+_i_("a9a:9b0552f8");
+var a = r.getState().roomsTable.js_selection;
+if (!a.roomCount) {
+o.preventDefault();
+var _ = e.filter(function(t, e) {
+return _i_("a9a:92d8eed6"), _r_(e.getBoundingClientRect().top > 60);
+}), s = _.get(0) || e.get(0);
+t.insertAfter(s), t.show().animate({
+opacity:1
+}, 600), n(".hprt-table-room-select").addClass("hprt-table-cell-select-error"), window.setTimeout(function() {
+_i_("a9a:645d91c7"), t.animate({
+opacity:0
+}, 600, function() {
+_i_("a9a:250ddeae"), t.hide(), _r_();
+}), _r_();
+}, 4e3), r.dispatch({
+type:i.SELECT_ROOM_ERROR
+}), n("select[name^='nr_rooms_']").attr("disabled", !1);
+}
+_r_();
+}), r.subscribe(function() {
+_i_("a9a:45872291");
+var t = r.getState().roomsTable.js_selection;
+t.roomCount && n(".hprt-table-cell-select-error").removeClass("hprt-table-cell-select-error"), _r_();
+}), _r_();
+}
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/select-rooms", function(t, e, o) {
+_i_("a9a:b65c1e4f");
+var a = t("component"), n = t("hotel/redux/actionTypes"), r = t("et"), i = t("hotel/store"), _ = t("component/hotel/new-rooms-table/fit-status"), s = t("jquery");
+o.exports = a.extend({
+init:function() {
+_i_("a9a:09585516");
+var t = this.$el, e = t.data("room-id"), o = t.data("block-id"), a = t.parents("tr").find("td").not(":first");
+t.on("change", function() {
+_i_("a9a:8e8c8433");
+var e;
+e = "1" === t.attr("data-is-fflex-selected") ? t.attr("data-other-block-id") :t.attr("data-block-id"), i.dispatch({
+type:n.SELECT_ROOM,
+block_id:e,
+number_of_rooms:parseInt(t.val(), 10),
+is_fflex_selected:t.attr("data-is-fflex-selected")
+}), 1 == B.env.b_is_group_search && _.update(), _r_();
+}), i.subscribe(function() {
+_i_("a9a:e513973c");
+var n = i.getState().roomsTable.js_selection;
+n.roomCount > 0 ? r.goal("hp_room_select") :n.nrSelections > 0 && r.goal("hp_rt_room_deselect"), o = t.attr("data-block-id");
+var _ = n.blocks[o];
+_ ? (t.val(_.js_nr_selected), _.js_is_highlighted ? a.addClass("hprt-block--room-selected") :a.removeClass("hprt-block--room-selected")) :a.removeClass("hprt-block--room-selected");
+var l = n.rooms[e];
+if (l && l.b_has_room_inventory) {
+var c = parseInt(t.val(), 10), h = parseInt(l.b_blocks[0].b_nr_stays, 10), d = h + c - n.roomCountPerRoomID[l.b_id];
+t.find("option").each(function() {
+_i_("a9a:4182cbe4"), s(this).prop("disabled", this.value > d), _r_();
+});
+} else t.find("option").each(function() {
+_i_("a9a:759347dd"), s(this).prop("disabled", !1), _r_();
+});
+_r_();
+}.bind(this)), _r_();
+}
+}), _r_();
+}), B.define("hotel/rooms-table", function(t) {
+_i_("a9a:de95e8e7");
+var e = t("jquery"), o = t("hotel/store"), a = t("booking-sticker"), n = !1;
+function r() {
+_i_("a9a:59856d90");
+var t = new a(), e = new a(), o = {};
+B.env.b_hp_sticky_offset && (o.initialOffset = B.env.b_hp_sticky_offset), t.init(".hprt-table thead", ".hprt-table", o), e.init(".hprt-table-cell.-last > .hprt-block", ".hprt-table-cell.-last", o), _r_();
+}
+"hotel" === B.env.b_action && B.env.b_bookings_owned && B.env.b_rooms_available_and_soldout && (e(".hprt-table tbody tr").length > 0 && (r(), o.subscribe(function() {
+_i_("a9a:86af2c2c"), window.setTimeout(a.update, 5), window.setTimeout(a.update, 10), _r_();
+}), 2 === a.stickedElements.length && (n = !0)), B.events.on("main-tab-opened", function() {
+_i_("a9a:f36067cd"), n || r(), _r_();
+})), t("hotel/rooms-table/reserve-button-tooltip"), e("#hprt-form").submit(function(t) {
+_i_("a9a:14d8f73f");
+var a, n = o.getState();
+if (!n.roomsTable.js_selection.roomCount || !n.roomsTable.rooms) return _r_();
+a = [];
+for (var r = [], i = 0; i < n.roomsTable.rooms.length; i++) {
+for (var _ = -1, s = 0; s < n.roomsTable.rooms[i].b_blocks.length; s++) n.roomsTable.js_selection.blocks[n.roomsTable.rooms[i].b_blocks[s].b_block_id] && (_ = s);
+var l = n.roomsTable.rooms[i].b_blocks.some(function(t) {
+return _i_("a9a:ceecf64c"), _r_(n.roomsTable.js_selection.blocks[t.b_block_id]);
+});
+l && a.push(i + 1), -1 != _ && r.push(_ + 1);
+}
+a.length && e(this).find("input[name=rt_pos_selected]").val(a.join("_")), r.length && e(this).find("input[name=rt_pos_selected_within_room]").val(r.join("_")), e("select[name^='nr_rooms_']").filter(function() {
+return _i_("a9a:5b49b831"), _r_(0 == e(this).val());
+}).attr("disabled", !0), _r_();
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/summary/stay-dates", function(t, e, o) {
+_i_("a9a:4bfdf1da");
+var a = t("component"), n = t("et");
+o.exports = a.extend({
+init:function() {
+_i_("a9a:ddcad4d1");
+var e = t("hotel/store");
+e.subscribe(function() {
+_i_("a9a:475cfad0");
+var t = e.getState().roomsTable.js_selection;
+if (t.roomCount > 0 && n.stage("ABbFLFcHCbXfVbcZTTEZKHJefecNfae", 1), !n.track("ABbFLFcHCbXfVbcZTTEZKHJefecNfae")) return _r_();
+t.roomCount > 0 ? this.$el.show() :this.$el.hide(), _r_();
+}.bind(this)), _r_();
+}
+}), _r_();
+}), B.define("component/hotel/new-rooms-table/summary/genius-room-upgrade", function(t, e, o) {
+_i_("a9a:6ad09232");
+var a = t("component"), n = t("hotel/store");
+o.exports = a.extend({
+init:function() {
+_i_("a9a:2de5899f"), n.subscribe(function() {
+_i_("a9a:fb397e50");
+var t = n.getState().roomsTable.js_selection, e = 0, o = 0;
+t.roomCount >= 1 ? ($.each(t.blocks, function(t, a) {
+_i_("a9a:36f29bce"), a.b_genius_free_room_upgrade ? e = 1 :o = 1, _r_();
+}), e && o ? this.$el.html('<div class="urgency_message_red"><strong>' + B.jstmpl.translations("genius_free_room_upgrade_rt_multiple") + "</strong></div>") :this.$el.html("")) :this.$el.html(""), _r_();
+}.bind(this)), _r_();
+}
+}), _r_();
+}), booking.jstmpl("js_hprt_select_room_options", function() {
+_i_("a9a:0aee1220");
+var t = [ "\n    ", '\n    <option value="', '">\n\n        ', "\n        ", "\n            ", "\n                &nbsp;\n            ", "\n            &nbsp;&nbsp;&nbsp;\n            (", ")\n        ", "\n    </option>\n", "\n\n", "\n" ], e = [ "fe_hprt_block" ];
+return _r_(function(o) {
+_i_("a9a:9dd81f89");
+var a = "", n = this.fn;
+function r(a) {
+_i_("a9a:cd283cce");
+var r = (n.MC(e[0]) || {}).b_stay_prices || [];
+o.unshift({
+fe_stay_price:null
+});
+for (var i, _ = 1, s = r.length; s >= _; _++) o[0].fe_stay_price = i = r[_ - 1], a += [ t[1], n.F.entities((i || {}).b_stays), t[2], (i || {}).b_stays, t[3] ].join(""), n.MJ(i.b_price) && (a += t[4], n.MJ(i.b_price < 10) && (a += t[5]), a += [ t[6], (i || {}).b_price, t[7] ].join("")), a += t[8];
+return o.shift(), a += t[9], _r_(a);
+}
+return a += t[0], o.unshift({
+fe_hprt_block:n.MB(e[0])
+}), a = r(a), o.shift(), a += t[10], _r_(a);
+});
+}()), B.require([ "jquery", "hotel/store", "jstmpl" ], function(t, e, o) {
+_i_("a9a:59a9458d");
+var a = o("js_hprt_select_room_options");
+t("input.flexibility-upgrade").on("change", function() {
+_i_("a9a:81c09be0");
+var o = t(this).attr("data-other-block-id"), r = t("select[name='nr_rooms_" + o + "']"), i = r.val();
+t(this).hasClass("flexible-policy") ? (r.attr("data-is-fflex-selected", "1"), B.et.customGoal("ZcSIcceNJVTZNZGIGGYBC", 3)) :r.attr("data-is-fflex-selected", "0");
+var _ = t(this).val();
+r.attr("name", "nr_rooms_" + _), r.attr("data-block-id", _), r.attr("data-other-block-id", o);
+var s = n(e.getState().roomsTable.rooms);
+r.html(a.render({
+fe_hprt_block:s[_]
+})), r.val(i), r.trigger("change"), _r_();
+});
+function n(t) {
+return _i_("a9a:2a948a92"), _r_(t.reduce(function(t, e) {
+return _i_("a9a:7dbc50af"), e.b_blocks.forEach(function(e) {
+_i_("a9a:c171c2a0"), t[e.b_block_id] = e, e.b_fflex_block && (t[e.b_fflex_block.b_block_id] = e.b_fflex_block), _r_();
+}), _r_(t);
+}, {}));
+}
+_r_();
+}), B.define("component/hotel/new-rooms-table/highlighted-row", function(t, e, o) {
+"use strict";
+_i_("a9a:c4bd5a96"), booking.jstmpl("hprt_row_highlight_block", function() {
+_i_("a9a:39642f31");
+var t, e = [ "\n        ", '\n<div class="hprt-table-cell__highlight-border">\n	<div class="hprt-table-cell__highlight-block">\n		\n		<span class="hprt-table-cell__highlight-block-logo">\n			', "iconset/briefcase", "small", "\n		</span>\n\n		\n		", "\n		\n		\n		", '\n			<span\n				class="hprt-table-cell__highlight-block-info"\n				data-component="tooltip"\n				data-tooltip-text="', '"\n			>\n				', "iconset/info_sign", "medium", "\n			<span>\n		", "\n	</div>\n</div>\n ", "\n    " ], o = [ "fe_content", "fe_tooltip" ];
+return _r_(function(a) {
+_i_("a9a:08637e0c");
+var n = "", r = this.fn;
+function i(n) {
+return _i_("a9a:973f0d08"), n += [ e[1], (a.unshift({
+name:e[2],
+size:e[3]
+}), t = r.HELPER("icon", a[0]), a.shift(), t), e[4], r.MC(o[0]), e[5] ].join(""), r.MD(o[1]) && (n += [ e[6], r.MC(o[1]), e[7], (a.unshift({
+name:e[8],
+size:e[9]
+}), t = r.HELPER("icon", a[0]), a.shift(), t), e[10] ].join("")), n += e[11], _r_(n);
+}
+return n += e[0], n = i(n), n += e[12], _r_(n);
+});
+}());
+var a = t("component"), n = t("jstmpl"), r = t("jquery");
+o.exports = a.extend({
+init:function() {
+_i_("a9a:5d87ca8d");
+var t = this;
+t.$cells = t.$el.find(".js--hprt-table-cell-highlight"), t.createHighlightBlock(), t.$cells.first().prepend(t.$highlightBlock), setTimeout(function() {
+_i_("a9a:eaf7770f"), t.$cells.addClass("hprt-table-cell--highlight-block-active"), _r_();
+}, 1), _r_();
+},
+createHighlightBlock:function() {
+_i_("a9a:7b0d06b2");
+var t = 0;
+this.$cells.each(function() {
+_i_("a9a:d90932a2"), t += r(this).outerWidth(), _r_();
+}), this.$highlightBlock || (this.$highlightBlock = r(n("hprt_row_highlight_block").render({
+fe_content:this.$el.data("highlight-content"),
+fe_tooltip:this.$el.data("highlight-tooltip")
+})).loadComponents()), this.$highlightBlock.css({
+width:t
+}), _r_();
+}
+}), _r_();
+}), B.require("hotel/rooms-table"), _r_();
+}();

@@ -1,0 +1,33 @@
+{
+  "name": "diego-cardozo-steamprofile",
+  "version": "1.0.0",
+  "description": "Diego Cardozo's resume inspired on his Steam profile",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.2.0",
+    "gulp-inject-css": "^0.3.10",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglifycss": "^1.0.9",
+    "gulp-watch": "^5.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/diegocard/diegocard.github.io.git"
+  },
+  "author": "Diego Cardozo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diegocard/diegocard.github.io/issues"
+  },
+  "homepage": "https://github.com/diegocard/diegocard.github.io#readme"
+}
