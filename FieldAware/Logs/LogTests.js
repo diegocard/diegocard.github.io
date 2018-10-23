@@ -52,7 +52,13 @@ require(
                 it ("should return all log lines with a given log level", function() {
                     var lp = new LogProcessor();
                     lp.processInput(testData);
-                    expect(lp.logs.entries.length).to.equal(7);
+                    var result = lp.getLogsByLogLevel("DEBUG");
+                    expect(result.length).to.equal(5);
+                    expect(result[0]).to.deep.include({description: "Starting new session"});
+                    expect(result[1]).to.deep.include({description: "Authenticating User"});
+                    expect(result[2]).to.deep.include({description: "Starting new session"});
+                    expect(result[3]).to.deep.include({description: "Authenticating User"});
+                    expect(result[4]).to.deep.include({description: "Deleting asset with ID 543234"});
                 });
 
                 it ("should return all log lines belonging to a given business", function() {
