@@ -3,46 +3,102 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SCA Performance Checkpoint runner</title>
+    <title>Automated SCA Performance Checkpoint runner</title>
 </head>
 
 <body>
-    <h1>SCA Performance Checkpoint runner</h1>
+    <h1>Automated SCA Performance Checkpoint runner</h1>
 
     <label for="domain">Domain</label>
     <input type="text" id="domain">
     <br><br>
     
-    <textarea name="output" id="output" cols="80" rows="20"></textarea>
+    <h4>Starting test</h4>
+    <textarea name="output1" id="output1" cols="120" rows="20" disabled></textarea>
+    <br>
+
+    <h4>Checking status</h4>
+    <textarea name="output2" id="output2" cols="120" rows="20" disabled></textarea>
+    <br>
+
+    <h4>Test complete</h4>
+    <textarea name="output3" id="output3" cols="120" rows="20" disabled></textarea>
     <br>
 
     <button id="run">Run</button>
 
     <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+    
+    <!-- Utility methods-->
     <script>
-        let ACTIONS = {
+        const ACTIONS = {
             RUNTEST: "runtest"
         }
 
-        // Events
-        $("#run").click(sendScriptRequest);
-
-        // Methods
-        function urlGenerator(url, action) {
-            let API_KEY = "A.1a07cbeb958333564222919ef578c45e";
-            let RUNS = 1;
-            if (action.toLower() === ACTIONS.RUNTEST) {
-                return `http://www.webpagetest.org/runtest.php?url=${url}&runs=${RUNS}&k=${API_KEY}&f=json`;
+        // Generates urls for the WPT API, depending on the required action
+        const wptUrlGenerator = (domain, action) => {
+            const API_KEY = "A.1a07cbeb958333564222919ef578c45e";
+            const RUNS = 1;
+            if (action.toLowerCase() === ACTIONS.RUNTEST) {
+                return `http://www.webpagetest.org/runtest.php?url=${domain}&runs=${RUNS}&k=${API_KEY}&f=json`;
             }
             
         }
 
-        function sendScriptRequest() {
-            let url = urlGenerator(ACTIONS.RUNTEST);
-            $.getJSON(url, (data) => {
-                $("#output").text(data);
-            });
+        // Returns a promise that is resolved once the polling is complete.
+        // We know that the polling is complete when the "check" function returns true.
+        const pollPromise = (fn, check, checkResult = false) => { 
+            if (checkResult) return checkResult;
+            const promise = fn();
+            return promise.then(data => pollPromise(fn, check, check(data)));
         }
+    </script>
+   
+    <!-- Event handlers -->
+    <script>
+        const executeAllTestSteps = () => {
+            runTest()
+            .then(waitCompleteStatus)
+            .then(showResults);
+        }
+
+        const runTest = () => {
+            let domain = $("#domain").val();
+            const url = wptUrlGenerator(domain, ACTIONS.RUNTEST);
+            return $.getJSON(url)
+                    .then((response) => {
+                        let data = response.data;
+                        $("#output1").text(JSON.stringify(data, null,'  '));
+                        return data;
+                    });
+        }
+
+        const waitCompleteStatus = (data) => {
+            // This method sends a request to get the current status of a test
+            const getTestStatus = () => $.getJSON(data.jsonUrl);
+            // This method checks if a test is ready
+            const isTestReady = (data) => {
+                if (data.statusCode !== 200) {
+                    $("#output2").text(JSON.stringify(data, null,'  '));
+                    return false;
+                } else {
+                    $("#output3").text(JSON.stringify(data, null,'  '));
+                    return data;
+                }
+            }
+            // Return a promise that polls until test results are ready.
+            // When the results are ready, the promise fulfills
+            return pollPromise(getTestStatus, isTestReady);
+        }
+
+        const showResults = (data) => {
+            alert("the results are ready!", data);
+        }
+    </script>
+
+    <!-- Events -->
+    <script>
+        $("#run").click(executeAllTestSteps);
     </script>
 </body>
 
