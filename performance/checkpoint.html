@@ -9,9 +9,32 @@
 <body>
     <h1>Automated SCA Performance Checkpoint runner</h1>
 
+    <!-- START input form -->
     <label for="domain">Domain</label>
-    <input type="text" id="domain">
+    <input type="text" id="domain" value="www.factorymation.com">
     <br><br>
+
+    <label for="search">Search term</label>
+    <input type="text" id="search" value="circuit">
+    <br><br>
+
+    <label for="plp">PLP URL</label>
+    <input type="text" id="plp" value="/acmotors">
+    <br><br>
+
+    <label for="pdp">PDP URL</label>
+    <input type="text" id="pdp" value="/-1809EP3EAL80">
+    <br><br>
+
+    <label for="username">Username</label>
+    <input type="text" id="username" value="keynotetesting@netsuite.com",">
+    <br><br>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" value="Test1234">
+    <br><br>
+   
+    <!-- END input form -->
     
     <h4>Starting test</h4>
     <textarea name="output1" id="output1" cols="120" rows="20" disabled></textarea>
@@ -26,23 +49,116 @@
     <br>
 
     <button id="run">Run</button>
+    <br><br>
+
+    <a id="results" href="">Results</a>
 
     <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
     
-    <!-- Utility methods-->
+    <!-- START script template -->
+    <script>
+        const template = (scriptData) =>  {
+            let result = `
+            // Home page
+            setEventName Home
+            navigate ${scriptData.domain}
+
+            // Search
+            setEventName Search
+            execAndWait Backbone.history.navigate("search?keywords=${scriptData.search}", {trigger: true})
+
+            // Product listing page
+            setEventName PLP
+            execAndWait Backbone.history.navigate("${scriptData.plp}", {trigger: true})
+
+            // Product detail page
+            setEventName Item
+            execAndWait Backbone.history.navigate("${scriptData.pdp}", {trigger: true})
+
+            // Add item to cart
+            setEventName Add to Cart
+            execAndWait jQuery(".item-details-add-to-cart-button")[0].click()
+
+            // View cart
+            setEventName View Cart
+            execAndWait Backbone.history.navigate("/cart", {trigger: true})
+
+            // Proceed to checkout
+            setEventName Proceed to checkout
+            execAndWait window.location.href = SC.ENVIRONMENT.siteSettings.touchpoints.checkout
+            
+            // Enter login and password
+            setEventName Entering login and password
+            exec jQuery(jQuery("#login-email")[0]).val("${scriptData.username}")
+            exec jQuery(jQuery("#login-password")[0]).val("${scriptData.password}")
+
+            // Click on "login"
+            setEventName Login
+            execAndWait jQuery(".login-register-login-submit")[0].click()
+            
+            // Proceed to shipping step
+            setEventName Shipping
+            execAndWait jQuery(".order-wizard-step-button-continue")[0].click()
+
+            // Clear cart
+            setEventName Clear Cart
+            navigate ${scriptData.domain}/app/site/backend/emptycart.nl`;
+
+            // Remove whitespaces
+            result = result.replace(/ +(?= )/g,'');
+            // Encode URI
+            result = encodeURIComponent(result);
+            return result;
+        }
+    </script>
+    <!-- END script template -->
+
+
+    <!-- START Utility methods-->
     <script>
         const ACTIONS = {
             RUNTEST: "runtest"
         }
 
+        const CONFIGURATION = {
+            API_KEY: "A.1a07cbeb958333564222919ef578c45e",
+            RUNS: 1,
+            POLL_DELAY: 1000,
+            FIRST_VIEW_ONLY: 1,
+            LOCATION: "Dulles",
+            BROWSER: "Chrome",
+            CONNECTION: "FIOS",
+            VIDEO: 1
+        }
+
         // Generates urls for the WPT API, depending on the required action
-        const wptUrlGenerator = (domain, action) => {
-            const API_KEY = "A.1a07cbeb958333564222919ef578c45e";
-            const RUNS = 1;
+        const wptUrlGenerator = (scriptData, action) => {
+            const encodedScript = template(scriptData);
+            const domain = scriptData.domain;
             if (action.toLowerCase() === ACTIONS.RUNTEST) {
-                return `http://www.webpagetest.org/runtest.php?url=${domain}&runs=${RUNS}&k=${API_KEY}&f=json`;
+                return `http://www.webpagetest.org/runtest.php?
+                    url=${domain}
+                    &runs=${CONFIGURATION.RUNS}
+                    &k=${CONFIGURATION.API_KEY}
+                    &fvonly=${CONFIGURATION.FIRST_VIEW_ONLY}
+                    &location=${CONFIGURATION.LOCATION}:${CONFIGURATION.BROWSER}.${CONFIGURATION.CONNECTION}
+                    &f=json
+                    &video=${CONFIGURATION.VIDEO}
+                    &script=${encodedScript}
+                `.replace(/ /g,'').replace(/(?:\r\n|\r|\n)/g, '');
             }
-            
+        }
+
+        // This function returns a promise that is resolved after "duration"
+        // This is used in order to throttle pollPromise
+        const delayPromise = (duration) => {
+            return function(...args){
+                return new Promise(function(resolve, reject){
+                    setTimeout(function(){
+                        resolve(...args);
+                    }, duration)
+                });
+            };
         }
 
         // Returns a promise that is resolved once the polling is complete.
@@ -50,11 +166,14 @@
         const pollPromise = (fn, check, checkResult = false) => { 
             if (checkResult) return checkResult;
             const promise = fn();
-            return promise.then(data => pollPromise(fn, check, check(data)));
+            return promise
+                .then(delayPromise(CONFIGURATION.POLL_DELAY))
+                .then(data => pollPromise(fn, check, check(data)));
         }
     </script>
+    <!-- END Utility methods-->
    
-    <!-- Event handlers -->
+    <!-- START Event handlers -->
     <script>
         const executeAllTestSteps = () => {
             runTest()
@@ -62,9 +181,20 @@
             .then(showResults);
         }
 
+        const getScriptData = () => {
+            return {
+                domain: $("#domain").val(),
+                search: $("#search").val(),
+                plp: $("#plp").val(),
+                pdp: $("#pdp").val(),
+                username: $("#username").val(),
+                password: $("#password").val()
+            }
+        }
+
         const runTest = () => {
-            let domain = $("#domain").val();
-            const url = wptUrlGenerator(domain, ACTIONS.RUNTEST);
+            const scriptData = getScriptData();
+            const url = wptUrlGenerator(scriptData, ACTIONS.RUNTEST);
             return $.getJSON(url)
                     .then((response) => {
                         let data = response.data;
@@ -92,14 +222,19 @@
         }
 
         const showResults = (data) => {
-            alert("the results are ready!", data);
+            alert("the results are ready!");
+            $("#results").attr("href", data.data.summary);
+            $("#results").show();
         }
     </script>
+    <!-- END Event handlers -->
 
-    <!-- Events -->
+    <!-- START Events -->
     <script>
         $("#run").click(executeAllTestSteps);
+        $("#results").hide();
     </script>
+    <!-- END Events -->
 </body>
 
 </html>
