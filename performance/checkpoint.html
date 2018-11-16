@@ -48,10 +48,13 @@
     <textarea name="output3" id="output3" cols="120" rows="20" disabled></textarea>
     <br>
 
+    <h4>Results</h4>
+    <div id="results"></div>
+    <a id="resultsLink" href="">Link to results</a>
+    <br>
+
     <button id="run">Run</button>
     <br><br>
-
-    <a id="results" href="">Results</a>
 
     <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
     
@@ -64,45 +67,45 @@
             navigate ${scriptData.domain}
 
             // Search
-            setEventName Search
-            execAndWait Backbone.history.navigate("search?keywords=${scriptData.search}", {trigger: true})
+            // setEventName Search
+            // execAndWait Backbone.history.navigate("search?keywords=${scriptData.search}", {trigger: true})
 
             // Product listing page
             setEventName PLP
             execAndWait Backbone.history.navigate("${scriptData.plp}", {trigger: true})
 
             // Product detail page
-            setEventName Item
-            execAndWait Backbone.history.navigate("${scriptData.pdp}", {trigger: true})
+            // setEventName Item
+            // execAndWait Backbone.history.navigate("${scriptData.pdp}", {trigger: true})
 
             // Add item to cart
-            setEventName Add to Cart
-            execAndWait jQuery(".item-details-add-to-cart-button")[0].click()
+            // setEventName Add to Cart
+            // execAndWait jQuery(".item-details-add-to-cart-button")[0].click()
 
             // View cart
-            setEventName View Cart
-            execAndWait Backbone.history.navigate("/cart", {trigger: true})
+            // setEventName View Cart
+            // execAndWait Backbone.history.navigate("/cart", {trigger: true})
 
             // Proceed to checkout
-            setEventName Proceed to checkout
-            execAndWait window.location.href = SC.ENVIRONMENT.siteSettings.touchpoints.checkout
+            // setEventName Proceed to checkout
+            // execAndWait window.location.href = SC.ENVIRONMENT.siteSettings.touchpoints.checkout
             
             // Enter login and password
-            setEventName Entering login and password
-            exec jQuery(jQuery("#login-email")[0]).val("${scriptData.username}")
-            exec jQuery(jQuery("#login-password")[0]).val("${scriptData.password}")
+            // setEventName Entering login and password
+            // exec jQuery(jQuery("#login-email")[0]).val("${scriptData.username}")
+            // exec jQuery(jQuery("#login-password")[0]).val("${scriptData.password}")
 
             // Click on "login"
-            setEventName Login
-            execAndWait jQuery(".login-register-login-submit")[0].click()
+            // setEventName Login
+            // execAndWait jQuery(".login-register-login-form").trigger("submit")
             
             // Proceed to shipping step
-            setEventName Shipping
-            execAndWait jQuery(".order-wizard-step-button-continue")[0].click()
+            // setEventName Shipping
+            // execAndWait jQuery(".order-wizard-step-button-continue")[0].click()
 
             // Clear cart
-            setEventName Clear Cart
-            navigate ${scriptData.domain}/app/site/backend/emptycart.nl`;
+            // setEventName Clear Cart
+            // navigate ${scriptData.domain}/app/site/backend/emptycart.nl`;
 
             // Remove whitespaces
             result = result.replace(/ +(?= )/g,'');
@@ -122,7 +125,7 @@
 
         const CONFIGURATION = {
             API_KEY: "A.1a07cbeb958333564222919ef578c45e",
-            RUNS: 1,
+            RUNS: 3,
             POLL_DELAY: 1000,
             FIRST_VIEW_ONLY: 1,
             LOCATION: "Dulles",
@@ -205,7 +208,7 @@
 
         const waitCompleteStatus = (data) => {
             // This method sends a request to get the current status of a test
-            const getTestStatus = () => $.getJSON(data.jsonUrl);
+            const getTestStatus = () => $.getJSON(data.jsonUrl + "&requests=0&domains=0&pagespeed=0&domains=0");
             // This method checks if a test is ready
             const isTestReady = (data) => {
                 if (data.statusCode !== 200) {
@@ -221,18 +224,51 @@
             return pollPromise(getTestStatus, isTestReady);
         }
 
+        const showRunResult = (run) => {
+            let tableRows = run.steps.map((step) => {
+                // TODO: remove this return
+                return `
+                    <tr>
+                        <td>${step.eventName}</td>
+                        <td>${step.visualComplete}</td>
+                    </tr>
+                `
+            });
+            let table = `
+                <h4>Run: ${run.run}</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Step</th>
+                            <th>Visually Complete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${tableRows}
+                    </tbody>
+                </table>
+            `;
+            debugger;
+            $("#results").append(table);
+        }
+
         const showResults = (data) => {
             alert("the results are ready!");
-            $("#results").attr("href", data.data.summary);
-            $("#results").show();
+            console.log("Test complete", data);
+            $("#resultsLink").attr("href", data.data.summary);
+            $("#resultsLink").show();
+            const runs = data.data.runs;
+            for (let run in runs) {
+                showRunResult(runs[run].firstView);
+            }
         }
     </script>
     <!-- END Event handlers -->
 
     <!-- START Events -->
     <script>
+        $("#resultsLink").hide();
         $("#run").click(executeAllTestSteps);
-        $("#results").hide();
     </script>
     <!-- END Events -->
 </body>
