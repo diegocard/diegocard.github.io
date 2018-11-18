@@ -139,7 +139,7 @@
             const encodedScript = template(scriptData);
             const domain = scriptData.domain;
             if (action.toLowerCase() === ACTIONS.RUNTEST) {
-                return `http://www.webpagetest.org/runtest.php?
+                return `https://www.webpagetest.org/runtest.php?
                     url=${domain}
                     &runs=${CONFIGURATION.RUNS}
                     &k=${CONFIGURATION.API_KEY}
